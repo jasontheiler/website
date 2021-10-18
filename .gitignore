@@ -1,0 +1,9 @@
+.vscode
+.nuxt
+.output
+node_modules
+*.local
+*.log
+.DS_Store
+.env
+nuxt.d.ts

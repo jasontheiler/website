@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "fmt": "prettier --write .",
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "start": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "@vueuse/core": "^6.6.2",
+    "motion": "^10.3.2",
+    "nuxt3": "latest"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "^4.5.0",
+    "@iconify/json": "^1.1.416",
+    "@windicss/plugin-interaction-variants": "^1.0.0",
+    "@windicss/plugin-scrollbar": "^1.2.3",
+    "nuxt-windicss": "^2.0.1",
+    "prettier": "~2.2.1",
+    "unplugin-icons": "^0.12.16",
+    "windicss": "^3.1.9"
+  }
+}

@@ -1,0 +1,6 @@
+.nuxt
+.output
+node_modules
+nuxt.d.ts
+package-lock.json
+pnpm-lock.yaml
