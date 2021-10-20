@@ -1,15 +1,22 @@
 <script setup lang="ts">
 import IconNuxt from "~icons/simple-icons/nuxtdotjs";
 import IconWindi from "~icons/file-icons/windi";
+import IconCode from "~icons/ri/code-s-slash-fill";
 
 const { buildTime } = useRuntimeConfig();
+const lastUpdated = new Date(buildTime).toLocaleString("en-US", {
+  timeZone: "UTC",
+  dateStyle: "medium",
+  timeStyle: "long",
+  hour12: false,
+});
 </script>
 
 <template>
   <footer
-    class="w-full max-w-screen-md mx-auto my-16 px-4 leading-loose text-center sm:(px-6)"
+    class="w-full max-w-screen-md mx-auto my-16 px-4 flex flex-col items-center leading-loose sm:(px-6)"
   >
-    <p class="mb-4 inline-flex items-center gap-2">
+    <p class="flex items-center gap-2">
       Powered by
       <a
         href="https://nuxtjs.org/"
@@ -30,6 +37,16 @@ const { buildTime } = useRuntimeConfig();
       </a>
     </p>
 
+    <p class="mb-4">
+      <a
+        href="https://github.com/jasontheiler/website"
+        target="_blank"
+        class="flex items-center gap-2 text-sm text-gray-500 hover:(text-gray-400)"
+      >
+        <IconCode /> Source code
+      </a>
+    </p>
+
     <p>
       © {{ new Date().getFullYear() }}
       <a
@@ -42,7 +59,7 @@ const { buildTime } = useRuntimeConfig();
     </p>
 
     <p class="italic text-sm text-gray-500 hover:(text-gray-400)">
-      Last update: {{ new Date(buildTime).toLocaleString() }}
+      Last updated: {{ lastUpdated }}
     </p>
   </footer>
 </template>
