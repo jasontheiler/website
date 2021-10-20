@@ -1,7 +1,13 @@
 <template>
   <header
-    class="fixed left-0 top-0 w-full h-18 px-4 flex justify-end items-center bg-perforated backdrop-filter backdrop-blur-sm sm:(px-6)"
-  ></header>
+    class="fixed left-0 top-0 z-50 w-full h-18 bg-perforated backdrop-filter backdrop-blur-sm"
+  >
+    <div
+      class="w-full max-w-screen-xl h-full mx-auto px-4 flex justify-between items-center sm:(px-6)"
+    >
+      <nav></nav>
+    </div>
+  </header>
 </template>
 
 <style>
