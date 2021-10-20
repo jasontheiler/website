@@ -10,13 +10,13 @@ export default defineConfig({
     require("@windicss/plugin-scrollbar"),
   ],
 
-  variants: {
-    scrollbar: ["rounded"],
-  },
-
   theme: {
     fontFamily: {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
     },
+  },
+
+  variants: {
+    scrollbar: ["rounded"],
   },
 });

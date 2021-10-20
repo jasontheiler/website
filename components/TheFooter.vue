@@ -1,0 +1,54 @@
+<script setup lang="ts">
+import IconNuxt from "~icons/simple-icons/nuxtdotjs";
+import IconWindi from "~icons/file-icons/windi";
+
+const { buildTime } = useRuntimeConfig();
+</script>
+
+<template>
+  <footer
+    class="w-full max-w-screen-md mx-auto my-16 px-4 leading-loose text-center sm:(px-6)"
+  >
+    <p class="mb-4 inline-flex items-center gap-2">
+      Powered by
+      <a
+        href="https://nuxtjs.org/"
+        target="_blank"
+        class="inline-flex hover:(text-[#00DC82])"
+        aria-label="NuxtJS"
+      >
+        <IconNuxt />
+      </a>
+      and
+      <a
+        href="https://windicss.org/"
+        target="_blank"
+        class="inline-flex hover:(text-[#48b0f1])"
+        aria-label="Windi CSS"
+      >
+        <IconWindi />
+      </a>
+    </p>
+
+    <p>
+      © {{ new Date().getFullYear() }}
+      <a
+        href="https://github.com/jasontheiler"
+        target="_blank"
+        class="hover:(text-white)"
+      >
+        Jason Theiler
+      </a>
+    </p>
+
+    <p class="italic text-sm text-gray-500 hover:(text-gray-400)">
+      Last update: {{ new Date(buildTime).toLocaleString() }}
+    </p>
+  </footer>
+</template>
+
+<style>
+.awd {
+  color: #48b0f1;
+}
+</style>
