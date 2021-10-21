@@ -1,14 +1,3 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
-    "resolveJsonModule": true,
-    "types": ["node"],
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./*"]
-    }
-  }
+  "extends": "./.nuxt/tsconfig.json"
 }

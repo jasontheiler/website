@@ -7,6 +7,8 @@ export default defineNuxtConfig({
     "nuxt-windicss",
     // See: https://github.com/antfu/unplugin-icons
     "unplugin-icons/nuxt",
+    // See: https://vueuse.org/
+    "@vueuse/core/nuxt",
   ],
 
   css: ["@fontsource/inter/latin.css"],
