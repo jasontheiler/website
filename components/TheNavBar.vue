@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import IconExternalLink from "~icons/ri/external-link-fill";
+</script>
+
 <template>
   <header
     class="fixed left-0 top-0 z-50 w-full h-18 bg-perforated backdrop-filter backdrop-blur-sm"
@@ -5,7 +9,28 @@
     <div
       class="w-full max-w-screen-xl h-full mx-auto px-4 flex justify-between items-center sm:(px-6)"
     >
-      <nav></nav>
+      <div />
+
+      <nav class="flex gap-6">
+        <NuxtLink :to="{ name: 'posts' }" class="mx-2 hover:(text-white)">
+          Posts
+        </NuxtLink>
+
+        <NuxtLink :to="{ name: 'notes' }" class="hover:(text-white)">
+          Notes
+        </NuxtLink>
+
+        <a
+          href="https://github.com/jasontheiler"
+          target="_blank"
+          class="group flex items-center gap-2 hover:(text-white)"
+        >
+          GitHub
+          <IconExternalLink
+            class="text-sm text-gray-500 group-hover:(text-gray-400)"
+          />
+        </a>
+      </nav>
     </div>
   </header>
 </template>
