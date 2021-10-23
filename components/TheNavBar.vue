@@ -23,7 +23,7 @@ import IconExternalLink from "~icons/ri/external-link-fill";
         <a
           href="https://github.com/jasontheiler"
           target="_blank"
-          class="group flex items-center gap-2 hover:(text-white)"
+          class="group flex items-center gap-1 hover:(text-white)"
         >
           GitHub
           <IconExternalLink
