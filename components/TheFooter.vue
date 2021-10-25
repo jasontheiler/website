@@ -14,7 +14,7 @@ const lastUpdated = new Date(buildTime).toLocaleString("en-US", {
 
 <template>
   <footer
-    class="w-full max-w-screen-xl mx-auto my-16 px-4 flex flex-col items-center leading-loose sm:(px-6)"
+    class="w-full max-w-screen-xl mx-auto my-16 px-4 flex flex-col items-center leading-loose text-center sm:(px-6)"
   >
     <p class="flex items-center gap-2">
       Powered by
