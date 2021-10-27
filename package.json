@@ -1,5 +1,6 @@
 {
   "private": true,
+  "license": "GPL-3.0",
   "scripts": {
     "fmt": "prettier --write .",
     "dev": "nuxt dev",
@@ -9,7 +10,7 @@
   "dependencies": {
     "@vueuse/core": "^6.7.3",
     "motion": "^10.4.0",
-    "nuxt3": "^3.0.0-27245396.550a9f2"
+    "nuxt3": "latest"
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.0",
