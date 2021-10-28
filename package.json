@@ -3,8 +3,8 @@
   "license": "GPL-3.0",
   "scripts": {
     "fmt": "prettier --write .",
-    "dev": "nuxt dev",
-    "build": "nuxt build",
+    "dev": "nuxi dev",
+    "build": "nuxi build",
     "start": "node .output/server/index.mjs"
   },
   "dependencies": {
