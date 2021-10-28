@@ -1,18 +1,20 @@
 <script setup lang="ts">
+// Recommended image aspect ratio: 128:79
+// Recommended image resolution: 1536x948px
 defineProps<{ imageSrc: string; imageAlt: string }>();
 </script>
 
 <template>
-  <div class="relative">
+  <div class="isolate relative">
     <img
       :src="imageSrc"
       :alt="imageAlt"
       class="absolute left-[0.3%] top-[5.3%] -z-1 w-[99.3%] h-[94%]"
     />
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 641 361">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 641 415">
       <path
-        d="M641,5.415c0,-2.989 -2.426,-5.415 -5.415,-5.415l-630.17,0c-2.989,0 -5.415,2.426 -5.415,5.415l0,350.17c0,2.989 2.426,5.415 5.415,5.415l630.17,0c2.989,0 5.415,-2.426 5.415,-5.415l0,-350.17Zm-3,14.585l-635,-0l0,335.43c0,1.97 0.6,2.57 2.57,2.57l629.86,0c1.97,0 2.57,-0.6 2.57,-2.57l0,-335.43Z"
+        d="M641,5.415c0,-2.989 -2.426,-5.415 -5.415,-5.415l-630.17,0c-2.989,0 -5.415,2.426 -5.415,5.415l0,404.17c0,2.989 2.426,5.415 5.415,5.415l630.17,-0c2.989,-0 5.415,-2.426 5.415,-5.415l0,-404.17Zm-3,14.585l-635,-0l0,389.43c0,1.97 0.6,2.57 2.57,2.57l629.86,-0c1.97,-0 2.57,-0.6 2.57,-2.57l0,-389.43Z"
         fill-rule="evenodd"
         class="fill-dark-800"
       />

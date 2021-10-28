@@ -1,9 +1,11 @@
 <script setup lang="ts">
+// Recommended image aspect ratio: 21:43
+// Recommended image resolution: 420x860px
 defineProps<{ imageSrc: string; imageAlt: string }>();
 </script>
 
 <template>
-  <div class="relative w-1/3">
+  <div class="isolate relative">
     <img
       :src="imageSrc"
       :alt="imageAlt"
