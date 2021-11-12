@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import IconExternalLink from "~icons/ri/external-link-fill";
-</script>
-
 <template>
   <header
     class="fixed left-0 top-0 z-50 w-full h-18 bg-perforated backdrop-filter backdrop-blur-sm"
@@ -26,8 +22,8 @@ import IconExternalLink from "~icons/ri/external-link-fill";
           class="group flex items-center gap-1 hover:(text-white)"
         >
           GitHub
-          <IconExternalLink
-            class="text-sm text-gray-500 group-hover:(text-gray-400)"
+          <div
+            class="i-ri-external-link-fill text-sm text-gray-500 group-hover:(text-gray-400)"
           />
         </a>
       </nav>

@@ -7,19 +7,19 @@
     "build": "nuxi build",
     "start": "node .output/server/index.mjs"
   },
-  "dependencies": {
-    "@vueuse/core": "^6.7.3",
-    "motion": "^10.4.0",
-    "nuxt3": "latest"
-  },
   "devDependencies": {
     "@fontsource/inter": "^4.5.0",
-    "@iconify/json": "^1.1.417",
+    "@iconify/json": "^1.1.426",
+    "@unocss/nuxt": "^0.6.6",
+    "@vueuse/core": "^6.8.0",
     "@windicss/plugin-interaction-variants": "^1.0.0",
     "@windicss/plugin-scrollbar": "^1.2.3",
-    "nuxt-windicss": "^2.0.4",
+    "motion": "^10.4.0",
+    "nuxt-windicss": "^2.0.12",
+    "nuxt3": "latest",
     "prettier": "~2.2.1",
-    "unplugin-icons": "^0.12.16",
-    "windicss": "^3.1.9"
+    "unocss": "^0.6.6",
+    "vue-motion-one": "^0.1.6",
+    "windicss": "^3.2.1"
   }
 }

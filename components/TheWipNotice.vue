@@ -1,10 +1,6 @@
-<script setup lang="ts">
-import IconFlash from "~icons/ri/flashlight-fill";
-</script>
-
 <template>
   <div class="w-full flex flex-wrap justify-center items-center gap-4">
-    <IconFlash class="w-32 h-32" />
+    <div class="i-ri-flashlight-fill text-9xl" />
 
     <div>
       <h1
