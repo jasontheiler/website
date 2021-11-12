@@ -8,12 +8,12 @@
       <div />
 
       <nav class="flex gap-6">
-        <NuxtLink :to="{ name: 'posts' }" class="mx-2 hover:(text-white)">
-          Posts
+        <NuxtLink :to="{ name: 'notes' }" class="mx-2 hover:(text-white)">
+          Notes
         </NuxtLink>
 
-        <NuxtLink :to="{ name: 'notes' }" class="hover:(text-white)">
-          Notes
+        <NuxtLink :to="{ name: 'tools' }" class="hover:(text-white)">
+          Tools
         </NuxtLink>
 
         <a
