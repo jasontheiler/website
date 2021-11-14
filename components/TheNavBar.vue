@@ -3,7 +3,7 @@
     class="fixed left-0 top-0 z-50 w-full h-18 bg-perforated backdrop-filter backdrop-blur-sm"
   >
     <div
-      class="w-full max-w-screen-xl h-full mx-auto px-4 flex justify-between items-center sm:(px-6)"
+      class="w-full max-w-screen-xl h-full mx-auto px-4 flex justify-between items-center sm:(px-6) md:(px-8) lg:(px-10)"
     >
       <div />
 

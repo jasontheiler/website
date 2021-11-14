@@ -9,7 +9,7 @@ defineProps<{ imageSrc: string; imageAlt: string }>();
     <img
       :src="imageSrc"
       :alt="imageAlt"
-      class="absolute left-[0.3%] top-[4.5%] -z-1 w-[99.3%] h-[95%] object-cover object-center"
+      class="absolute left-[0.3%] top-[4.5%] -z-1 w-[99.3%] h-[95%] object-cover object-center bg-dark-900"
     />
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 641 415">
