@@ -56,10 +56,7 @@ onBeforeUnmount(() => observer.disconnect());
             ref="viewsContainerElement"
             class="w-full h-full flex justify-center items-center"
           >
-            <div
-              ref="viewsElement"
-              class="relative w-9/16 origin-center shadow-2xl"
-            >
+            <div ref="viewsElement" class="relative w-9/16 origin-center">
               <ProjectViewBrowserDesktop
                 imageSrc="/images/gol_desktop.png"
                 imageAlt="Conway's Game of Life on desktop"
