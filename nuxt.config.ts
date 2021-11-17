@@ -1,8 +1,14 @@
 import { defineNuxtConfig } from "nuxt3";
 import { presetIcons } from "unocss";
 
+import Content from "./content";
+
 // See: https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
+  vite: {
+    plugins: [Content()],
+  },
+
   buildModules: [
     // See: https://github.com/windicss/nuxt-windicss
     "nuxt-windicss",
