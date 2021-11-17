@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { animate, spring } from "vue-motion-one";
 
-import projects from "~/content/projects.json";
+const projects = await Promise.all(
+  Object.values(import.meta.glob("/content/projects/**/*.md")).map(
+    async (module) => (await module()).default
+  )
+);
+const sortedProjects = projects.sort((a, b) => a.order - b.order);
 
 const viewsContainerElement = ref<HTMLElement>();
 const viewsElement = ref<HTMLElement>();
@@ -77,7 +82,7 @@ onBeforeUnmount(() => observer.disconnect());
       class="w-full max-w-screen-xl mx-auto px-4 sm:(px-6) md:(px-8) lg:(px-10)"
     >
       <div
-        v-for="({ title, description }, idx) in projects"
+        v-for="({ title, body }, idx) in sortedProjects"
         :ref="setProjectElement"
         :data-views-side="idx % 2 ? 'right' : 'left'"
         class="min-h-screen flex items-center"
@@ -89,7 +94,7 @@ onBeforeUnmount(() => observer.disconnect());
             {{ title }}
           </h1>
 
-          <p>{{ description }}</p>
+          <div v-html="body" />
         </div>
       </div>
     </div>
