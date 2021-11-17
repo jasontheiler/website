@@ -25,7 +25,7 @@ const unplugin = createUnplugin(() => ({
     }
 
     if (/\.(yml|yaml)$/.test(id))
-      return `export default ${JSON.stringify(Yaml.load(code))}`;
+      return `export default ${JSON.stringify(Yaml.load(code))};`;
   },
 }));
 
