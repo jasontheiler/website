@@ -3,7 +3,6 @@ lockfileVersion: 5.3
 specifiers:
   '@fontsource/inter': ^4.5.1
   '@iconify/json': ^1.1.431
-  '@types/js-yaml': ^4.0.4
   '@types/markdown-it': ^12.2.3
   '@unocss/nuxt': ^0.9.3
   '@vueuse/core': ^6.9.2
@@ -25,7 +24,6 @@ specifiers:
 devDependencies:
   '@fontsource/inter': 4.5.1
   '@iconify/json': 1.1.431
-  '@types/js-yaml': 4.0.4
   '@types/markdown-it': 12.2.3
   '@unocss/nuxt': 0.9.4
   '@vueuse/core': 6.9.2
@@ -770,10 +768,6 @@ packages:
 
   /@types/estree/0.0.50:
     resolution: {integrity: sha512-C6N5s2ZFtuZRj54k2/zyRhNDjJwwcViAM3Nbm8zjBpbqAdZ00mr0CFxvSKeO8Y/e03WVFLpQMdHYVfUd6SB+Hw==}
-    dev: true
-
-  /@types/js-yaml/4.0.4:
-    resolution: {integrity: sha512-AuHubXUmg0AzkXH0Mx6sIxeY/1C110mm/EkE/gB1sTRz3h2dao2W/63q42SlVST+lICxz5Oki2hzYA6+KnnieQ==}
     dev: true
 
   /@types/jsdom/16.2.13:

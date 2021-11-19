@@ -11,7 +11,6 @@
   "devDependencies": {
     "@fontsource/inter": "^4.5.1",
     "@iconify/json": "^1.1.431",
-    "@types/js-yaml": "^4.0.4",
     "@types/markdown-it": "^12.2.3",
     "@unocss/nuxt": "^0.9.3",
     "@vueuse/core": "^6.9.2",
