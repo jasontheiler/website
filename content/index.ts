@@ -26,7 +26,10 @@ const unplugin = createUnplugin(() => ({
   transform(code, id) {
     const { data, content } = grayMatter(code);
     const html = markdownIt.render(content);
-    const dom = parseDocument(html);
+    const dom = parseDocument(html, {
+      lowerCaseTags: false,
+      lowerCaseAttributeNames: false,
+    });
 
     for (const codeElement of getElementsByTagName("code", dom)) {
       codeElement.attribs["v-pre"] = "";
