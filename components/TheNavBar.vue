@@ -8,24 +8,19 @@
       <div />
 
       <nav class="flex gap-6">
-        <NuxtLink :to="{ name: 'notes' }" class="hover:(text-white)">
-          Notes
-        </NuxtLink>
+        <AppLink :to="{ name: 'notes' }">Notes</AppLink>
 
-        <NuxtLink :to="{ name: 'tools' }" class="hover:(text-white)">
-          Tools
-        </NuxtLink>
+        <AppLink :to="{ name: 'tools' }">Tools</AppLink>
 
-        <a
-          href="https://github.com/jasontheiler"
-          target="_blank"
-          class="group flex items-center gap-1 hover:(text-white)"
+        <AppLink
+          to="https://github.com/jasontheiler"
+          class="group flex items-center gap-1"
         >
           GitHub
           <div
             class="i-ri-external-link-fill text-sm text-gray-500 group-hover:(text-gray-400)"
           />
-        </a>
+        </AppLink>
       </nav>
     </div>
   </header>

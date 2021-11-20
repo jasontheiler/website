@@ -14,40 +14,31 @@ const lastUpdated = new Date(buildTime).toLocaleString("en-US", {
   >
     <p class="flex items-center gap-2">
       Powered by
-      <a
-        href="https://nuxtjs.org/"
-        target="_blank"
+      <AppLink
+        to="https://nuxtjs.org/"
         title="NuxtJS"
         class="i-simple-icons-nuxtdotjs hover:(text-[#00DC82])"
       />
       and
-      <a
-        href="https://windicss.org/"
-        target="_blank"
+      <AppLink
+        to="https://windicss.org/"
         title="Windi CSS"
         class="i-file-icons-windi hover:(text-[#48b0f1])"
       />
     </p>
 
     <p class="mb-4">
-      <a
-        href="https://github.com/jasontheiler/website"
-        target="_blank"
+      <AppLink
+        to="https://github.com/jasontheiler/website"
         class="flex items-center gap-2 text-sm text-gray-500 hover:(text-gray-400)"
       >
         <span class="i-ri-code-s-slash-fill" /> Source code
-      </a>
+      </AppLink>
     </p>
 
     <p>
-      © {{ new Date().getFullYear() }}
-      <a
-        href="https://github.com/jasontheiler"
-        target="_blank"
-        class="hover:(text-white)"
-      >
-        Jason Theiler
-      </a>
+      © 2021-PRESENT
+      <AppLink to="https://github.com/jasontheiler">Jason Theiler</AppLink>
     </p>
 
     <p class="italic text-sm text-gray-500">Last updated: {{ lastUpdated }}</p>

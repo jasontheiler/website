@@ -35,15 +35,15 @@ const unplugin = createUnplugin(() => ({
       codeElement.attribs["v-pre"] = "";
     }
 
-    // for (const aElement of getElementsByTagName("a", dom)) {
-    //   aElement.tagName = "AppLink";
+    for (const aElement of getElementsByTagName("a", dom)) {
+      aElement.tagName = "AppLink";
 
-    //   const href = aElement.attribs["href"];
-    //   if (!href) continue;
+      const href = aElement.attribs["href"];
+      if (!href) continue;
 
-    //   delete aElement.attribs["href"];
-    //   aElement.attribs["to"] = href;
-    // }
+      delete aElement.attribs["href"];
+      aElement.attribs["to"] = href;
+    }
 
     const transformedHtml = serializeDom(dom);
     const component = compileTemplate({
