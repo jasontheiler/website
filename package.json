@@ -10,9 +10,9 @@
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.1",
-    "@iconify/json": "^1.1.431",
+    "@iconify/json": "^1.1.432",
     "@types/markdown-it": "^12.2.3",
-    "@unocss/nuxt": "^0.9.3",
+    "@unocss/nuxt": "^0.12.1",
     "@vueuse/core": "^6.9.2",
     "@windicss/plugin-interaction-variants": "^1.0.0",
     "@windicss/plugin-scrollbar": "^1.2.3",
@@ -24,7 +24,7 @@
     "nuxt-windicss": "^2.0.12",
     "nuxt3": "latest",
     "prettier": "~2.2.1",
-    "unocss": "^0.9.3",
+    "unocss": "^0.12.1",
     "unplugin": "^0.2.21",
     "vue-motion-one": "^0.1.6",
     "windicss": "^3.2.1"
