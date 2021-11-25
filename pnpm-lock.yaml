@@ -18,7 +18,6 @@ specifiers:
   prettier: ~2.2.1
   unocss: ^0.12.9
   unplugin: ^0.2.21
-  vue-motion-one: ^0.1.6
   windicss: ^3.2.1
 
 devDependencies:
@@ -39,7 +38,6 @@ devDependencies:
   prettier: 2.2.1
   unocss: 0.12.9
   unplugin: 0.2.21
-  vue-motion-one: 0.1.6_motion@10.4.0
   windicss: 3.2.1
 
 packages:
@@ -6097,15 +6095,6 @@ packages:
       hash-sum: 2.0.0
       loader-utils: 2.0.2
       webpack: 5.64.4
-    dev: true
-
-  /vue-motion-one/0.1.6_motion@10.4.0:
-    resolution: {integrity: sha512-M/TTjDAoLAkqexUt7g5v0lq/zOBjD2c+ESrxTfOFKKgJmugYSNaKrkNbAEZJDFrudAJcNDepfjK0Dan7ol0Ypg==}
-    peerDependencies:
-      motion: ^10.4.0
-      vue: ^3.2.0
-    dependencies:
-      motion: 10.4.0
     dev: true
 
   /vue-router/4.0.12_vue@3.2.22:

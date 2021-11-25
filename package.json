@@ -26,7 +26,6 @@
     "prettier": "~2.2.1",
     "unocss": "^0.12.9",
     "unplugin": "^0.2.21",
-    "vue-motion-one": "^0.1.6",
     "windicss": "^3.2.1"
   }
 }
