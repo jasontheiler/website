@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { animate, spring } from "vue-motion-one";
+import { animate, spring } from "motion";
 
 const projects = await Promise.all(
   Object.values(import.meta.glob("/content/projects/**/*.md")).map(
