@@ -6,7 +6,7 @@ const projects = await Promise.all(
     async (module) => (await module()).default
   )
 );
-const sortedProjects = projects.sort((a, b) => a.order - b.order);
+projects.sort((a, b) => a.order - b.order);
 
 const viewsContainerElement = ref<HTMLElement>();
 const viewsElement = ref<HTMLElement>();
@@ -82,7 +82,7 @@ onBeforeUnmount(() => observer.disconnect());
       class="w-full max-w-screen-xl mx-auto px-4 sm:(px-6) md:(px-8) lg:(px-10)"
     >
       <div
-        v-for="({ title, body }, idx) in sortedProjects"
+        v-for="({ title, body }, idx) in projects"
         :ref="setProjectElement"
         :data-views-side="idx % 2 ? 'right' : 'left'"
         class="min-h-screen flex items-center"
