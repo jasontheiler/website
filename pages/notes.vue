@@ -5,8 +5,7 @@ const notes = await Promise.all(
   )
 );
 const sortedNotes = notes.sort(
-  // @ts-ignore
-  (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
 );
 </script>
 
