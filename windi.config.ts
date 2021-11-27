@@ -12,6 +12,10 @@ export default defineConfig({
 
   theme: {
     extend: {
+      screens: {
+        xs: "384px",
+      },
+
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
       },
