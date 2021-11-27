@@ -1,4 +1,5 @@
 declare module "*.md" {
-  const content: Record<string, any> & { body: string };
+  import { DefineComponent } from "vue";
+  const content: Record<string, any> & { body: DefineComponent<{}, {}, any> };
   export default content;
 }
