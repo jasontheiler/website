@@ -12,18 +12,18 @@ const lastUpdated = new Date(buildTime).toLocaleString("en-US", {
   <footer
     class="w-full max-w-screen-xl mx-auto my-16 px-4 flex flex-col items-center leading-loose text-center sm:(px-6)"
   >
-    <p class="flex items-center gap-2">
-      Powered by
+    <p class="flex items-center">
+      Built with
       <AppLink
         to="https://nuxtjs.org/"
         title="NuxtJS"
-        class="i-simple-icons-nuxtdotjs hover:(text-[#00DC82])"
+        class="i-simple-icons-nuxtdotjs ml-2 hover:(text-[#00DC82])"
       />
-      and
+      , powered by
       <AppLink
-        to="https://windicss.org/"
-        title="Windi CSS"
-        class="i-file-icons-windi hover:(text-[#48b0f1])"
+        to="https://vercel.com/"
+        title="Vercel"
+        class="i-simple-icons-vercel ml-2 hover:(text-white)"
       />
     </p>
 
