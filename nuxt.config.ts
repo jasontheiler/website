@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     // See: https://github.com/antfu/unocss
     "@unocss/nuxt",
     // See: https://vueuse.org/
-    "@vueuse/core/nuxt",
+    "@vueuse/nuxt",
   ],
 
   build: {
