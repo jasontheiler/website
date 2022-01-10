@@ -4,12 +4,13 @@ const tools = await Promise.all(
     async (module) => (await module()).default
   )
 );
+
 const categories = tools.reduce((categories, tool) => {
-  const idx = categories.findIndex(
+  const category = categories.find(
     (category) => category.name === tool.category
   );
 
-  if (idx >= 0) categories[idx].tools.push(tool);
+  if (category) category.tools.push(tool);
   else categories.push({ name: tool.category, tools: [tool] });
 
   return categories;
@@ -18,20 +19,22 @@ categories.sort((a, b) => a.name.localeCompare(b.name));
 </script>
 
 <template>
-  <main class="w-full max-w-screen-xl mx-auto mt-32 px-4 sm:(px-6)">
-    <TheWipNotice />
+  <main
+    class="w-full max-w-screen-xl mx-auto mt-32 px-4 xs:(px-6) sm:(px-8) md:(px-10) lg:(px-12)"
+  >
+    <div class="grid gap-16 md:(grid-cols-2)">
+      <div v-for="{ name, tools } in categories">
+        <h2>{{ name }}</h2>
 
-    <div v-for="{ name, tools } in categories">
-      <h1>{{ name }}</h1>
+        <div v-for="{ name, link, body } in tools">
+          <h3
+            class="mb-2 bg-clip-text bg-gray-300 bg-foil font-bold text-2xl text-transparent"
+          >
+            <AppLink :to="link">{{ name }}</AppLink>
+          </h3>
 
-      <div v-for="{ name, link, body } in tools">
-        <h2
-          class="mb-2 bg-clip-text bg-gray-300 bg-foil font-bold text-2xl text-transparent"
-        >
-          <AppLink :to="link">{{ name }}</AppLink>
-        </h2>
-
-        <Component :is="body" />
+          <AppProse :content="body" />
+        </div>
       </div>
     </div>
   </main>
