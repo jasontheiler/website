@@ -46,7 +46,7 @@ const unplugin = createUnplugin(() => ({
     }
 
     const transformedHtml = serializeDom(dom);
-    const component = compileTemplate({
+    const results = compileTemplate({
       source: transformedHtml,
       filename: id,
       id,
@@ -54,7 +54,7 @@ const unplugin = createUnplugin(() => ({
 
     return `
     const data = ${JSON.stringify(data)};
-    ${component.code.replace("export function", "function")}
+    ${results.code.replace("export function", "function")}
 
     export default { ...data, body: { render } };
     `;
