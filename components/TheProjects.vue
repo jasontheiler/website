@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { animate, spring } from "motion";
 
-const projects = await Promise.all(
-  Object.values(import.meta.glob("/content/projects/**/*.md")).map(
-    async (module) => (await module()).default
-  )
+import { getDefaultExports } from "~/utils";
+
+const projects = await getDefaultExports<Project>(
+  import.meta.glob("/content/projects/**/*.md")
 );
 projects.sort((a, b) => a.order - b.order);
 

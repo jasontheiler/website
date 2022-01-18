@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const tools = await Promise.all(
-  Object.values(import.meta.glob("/content/tools/**/*.md")).map(
-    async (module) => (await module()).default
-  )
+import { getDefaultExports } from "~/utils";
+
+const tools = await getDefaultExports<Tool>(
+  import.meta.glob("/content/tools/**/*.md")
 );
 
 const categories = tools.reduce((categories, tool) => {

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const notes = await Promise.all(
-  Object.values(import.meta.glob("/content/notes/**/*.md")).map(
-    async (module) => (await module()).default
-  )
+import { getDefaultExports } from "~/utils";
+
+const notes = await getDefaultExports<Note>(
+  import.meta.glob("/content/notes/**/*.md")
 );
 notes.sort(
   (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
