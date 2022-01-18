@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { DefineComponent } from "vue";
-
-defineProps<{ content: DefineComponent<{}, {}, any> }>();
+defineProps<{ content: string | Object /* Component */ }>();
 </script>
 
 <template>
   <div>
-    <Component :is="content" />
+    <component :is="content" />
   </div>
 </template>
 
