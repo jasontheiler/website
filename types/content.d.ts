@@ -1,5 +1,5 @@
 declare type Content = Record<string, any> & {
-  body: () => import("vue").VNode;
+  body: () => import("vue").DefineComponent<{}, {}, any>;
 };
 
 declare type Project = Content & {

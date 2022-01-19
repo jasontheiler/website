@@ -54,9 +54,19 @@ const unplugin = createUnplugin(() => ({
 
     return `
     const data = ${JSON.stringify(data)};
-    ${results.code.replace("export function", "function")}
 
-    export default { ...data, body: { render } };
+    ${results.code.replace(
+      /(?<![\[({<][^\])}>]*)export[\s\t\n\r]*?(?=function)(?![^\[({<]*[\])}>])/,
+      ""
+    )};
+
+    export default {
+      ...data,
+      body: {
+        name: "${id.split("/").pop()}",
+        render,
+      },
+    };
     `;
   },
 }));

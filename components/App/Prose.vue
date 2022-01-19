@@ -1,5 +1,7 @@
 <script setup lang="ts">
-defineProps<{ content: string | Object /* Component */ }>();
+import { DefineComponent } from "vue";
+
+defineProps<{ content: DefineComponent<{}, {}, any> }>();
 </script>
 
 <template>
