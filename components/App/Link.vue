@@ -10,7 +10,7 @@ const isExternal = computed(
 </script>
 
 <template>
-  <Component
+  <component
     :is="isExternal ? 'a' : 'NuxtLink'"
     v-bind="
       isExternal
@@ -19,5 +19,5 @@ const isExternal = computed(
     "
     class="text-gray-300 no-underline hover:(text-white)"
     ><slot
-  /></Component>
+  /></component>
 </template>

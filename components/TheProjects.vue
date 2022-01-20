@@ -94,7 +94,7 @@ onBeforeUnmount(() => observer.disconnect());
             {{ title }}
           </h1>
 
-          <Component :is="body" />
+          <component :is="body" />
         </div>
       </div>
     </div>
