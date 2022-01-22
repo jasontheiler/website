@@ -10,22 +10,23 @@
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.1",
-    "@iconify/json": "^1.1.454",
+    "@iconify/json": "^1.1.459",
     "@types/markdown-it": "^12.2.3",
-    "@unocss/nuxt": "^0.22.0",
-    "@vueuse/nuxt": "^7.5.3",
+    "@types/nprogress": "^0.2.0",
+    "@unocss/nuxt": "^0.22.5",
+    "@vueuse/nuxt": "^7.5.4",
     "@windicss/plugin-interaction-variants": "^1.0.0",
     "@windicss/plugin-scrollbar": "^1.2.3",
     "gray-matter": "^4.0.3",
     "htmlparser2": "^7.2.0",
     "markdown-it": "^12.3.2",
     "markdown-it-shiki": "^0.3.0",
-    "motion": "^10.5.0",
+    "motion": "^10.5.2",
     "nuxt-windicss": "^2.2.2",
     "nuxt3": "latest",
     "prettier": "^2.5.1",
-    "unocss": "^0.22.0",
-    "unplugin": "^0.3.0",
-    "windicss": "^3.4.2"
+    "unocss": "^0.22.5",
+    "unplugin": "^0.3.1",
+    "windicss": "^3.4.3"
   }
 }
