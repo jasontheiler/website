@@ -53,12 +53,20 @@ const unplugin = createUnplugin(() => ({
     });
 
     return `
-    const data = ${JSON.stringify(data)};
+    const data = ${JSON.stringify(data)
+      // Turns all valid date strings into `Date` objects.
+      .replace(/(["'])(?:(?=(\\?))\2.)*?\1/g, (value) =>
+        isNaN(Date.parse(value.replace(/^["'](.*)["']$/, "$1")))
+          ? value
+          : `new Date(${value})`
+      )};
 
-    ${results.code.replace(
-      /(?<![\[({<][^\])}>]*)export[\s\t\n\r]*?(?=function)(?![^\[({<]*[\])}>])/,
-      ""
-    )};
+    ${results.code
+      // Removes all top-level `export` keywords.
+      .replace(
+        /(?<![\[({<][^\])}>]*)export[^.]*?(?=function)(?![^\[({<]*[\])}>])/g,
+        ""
+      )};
 
     export default {
       ...data,
