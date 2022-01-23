@@ -15,6 +15,10 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
   @apply underline underline-current;
 }
 
+:deep(code) {
+  @apply font-mono;
+}
+
 :deep(pre) {
   @apply -mx-4 p-4;
 }

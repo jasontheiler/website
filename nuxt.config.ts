@@ -22,4 +22,10 @@ export default defineNuxtConfig({
   publicRuntimeConfig: {
     buildTime: new Date(),
   },
+
+  meta: {
+    link: [
+      { rel: "stylesheet", href: "https://www.monolisa.dev/api/fonts/initial" },
+    ],
+  },
 });

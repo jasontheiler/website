@@ -18,6 +18,7 @@ export default defineConfig({
 
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        mono: ["MonoLisa", ...defaultTheme.fontFamily.mono],
       },
 
       backgroundImage: {
