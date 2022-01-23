@@ -1,5 +1,4 @@
 import { defineNuxtConfig } from "nuxt3";
-import { presetIcons } from "unocss";
 
 import Content from "./content";
 
@@ -18,15 +17,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
   ],
 
-  build: {
-    transpile: ["tslib"],
-  },
-
   css: ["@fontsource/inter/latin.css"],
-
-  unocss: {
-    presets: [presetIcons({ scale: 1.2 })],
-  },
 
   publicRuntimeConfig: {
     buildTime: new Date(),
