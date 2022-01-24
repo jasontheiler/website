@@ -1,18 +1,11 @@
 import { createUnplugin } from "unplugin";
 import grayMatter from "gray-matter";
 import MarkdownIt from "markdown-it";
-import Shiki from "markdown-it-shiki";
+import { getHighlighter } from "shiki";
 import { parseDocument } from "htmlparser2";
 import { getElementsByTagName } from "domutils";
 import serializeDom from "dom-serializer";
 import { compileTemplate } from "@vue/compiler-sfc";
-
-const markdownIt = new MarkdownIt({
-  html: true,
-  linkify: true,
-});
-
-markdownIt.use(Shiki);
 
 const unplugin = createUnplugin(() => ({
   name: "content",
@@ -23,7 +16,42 @@ const unplugin = createUnplugin(() => ({
     return /\.md$/.test(id);
   },
 
-  transform(code, id) {
+  async transform(code, id) {
+    const highlighter = await getHighlighter({});
+
+    const markdownIt = new MarkdownIt({
+      html: true,
+      linkify: true,
+      highlight(code, lang, attrs) {
+        const fileName = attrs.match(/(?<=\[).*(?=\])/)?.shift();
+        const highlightedLines = attrs
+          .match(/(?<={)(\d+(|-\d+),)*\d+(|-\d+)(?=})/)
+          ?.shift()
+          ?.split(",")
+          ?.reduce((lines, n) => {
+            if (!n.includes("-")) return [...lines, parseInt(n)];
+
+            const [start, end] = n
+              .split("-")
+              .map((n) => parseInt(n))
+              .sort();
+
+            return [
+              ...lines,
+              ...Array.from({ length: end - start + 1 }, (_, i) => i + start),
+            ];
+          }, [] as number[]);
+
+        return highlighter.codeToHtml(code, {
+          lang,
+          lineOptions: highlightedLines?.map((line) => ({
+            line,
+            classes: ["highlight"],
+          })),
+        });
+      },
+    });
+
     const { data, content } = grayMatter(code);
     const html = markdownIt.render(content);
     const dom = parseDocument(html, {
@@ -56,9 +84,7 @@ const unplugin = createUnplugin(() => ({
     const data = ${JSON.stringify(data)
       // Turns all valid date strings into `Date` objects.
       .replace(/(["'])(?:(?=(\\?))\2.)*?\1/g, (value) =>
-        isNaN(Date.parse(value.replace(/^["'](.*)["']$/, "$1")))
-          ? value
-          : `new Date(${value})`
+        isNaN(Date.parse(value.slice(1, -1))) ? value : `new Date(${value})`
       )};
 
     ${results.code

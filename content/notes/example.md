@@ -61,7 +61,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 Inline `code` has `back-ticks` around it.
 
-```vue [pages/posts/_slug.vue]
+```vue {5-9} [pages/posts/[slug].vue]
 <script>
 export default {
   async asyncData({ $content, params }) {

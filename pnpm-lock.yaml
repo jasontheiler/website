@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@fontsource/inter': ^4.5.1
-  '@iconify/json': ^1.1.459
+  '@iconify/json': ^1.1.460
   '@types/markdown-it': ^12.2.3
   '@types/nprogress': ^0.2.0
   '@unocss/nuxt': ^0.22.5
@@ -12,18 +12,18 @@ specifiers:
   gray-matter: ^4.0.3
   htmlparser2: ^7.2.0
   markdown-it: ^12.3.2
-  markdown-it-shiki: ^0.3.0
-  motion: ^10.5.2
+  motion: ^10.6.0
   nuxt-windicss: ^2.2.2
   nuxt3: latest
   prettier: ^2.5.1
+  shiki: ^0.10.0
   unocss: ^0.22.5
   unplugin: ^0.3.1
   windicss: ^3.4.3
 
 devDependencies:
   '@fontsource/inter': 4.5.1
-  '@iconify/json': 1.1.459
+  '@iconify/json': 1.1.460
   '@types/markdown-it': 12.2.3
   '@types/nprogress': 0.2.0
   '@unocss/nuxt': 0.22.5
@@ -33,11 +33,11 @@ devDependencies:
   gray-matter: 4.0.3
   htmlparser2: 7.2.0
   markdown-it: 12.3.2
-  markdown-it-shiki: 0.3.0
-  motion: 10.5.2
+  motion: 10.6.0
   nuxt-windicss: 2.2.2
   nuxt3: 3.0.0-27379487.e0cf2d7
   prettier: 2.5.1
+  shiki: 0.10.0
   unocss: 0.22.5
   unplugin: 0.3.1
   windicss: 3.4.3
@@ -368,8 +368,8 @@ packages:
     resolution: {integrity: sha512-mvtOvXNNVLlF1p/UbLgLrmz2RCOl6Ow+TqyiK10SosoLKX7edsXYiHFHb7XIZdjII6F2sJVPPsJXWhBnbXT2DQ==}
     dev: true
 
-  /@iconify/json/1.1.459:
-    resolution: {integrity: sha512-ToupL/TZCWIx2OeISEnZUqGIsYzOcc9exHbzQV3rhGARxoao+fl5a6C/YG2St/tocOCcHExwuGnV0fO9wpdJMA==}
+  /@iconify/json/1.1.460:
+    resolution: {integrity: sha512-iPIJceykY8fmp7kjZGt6iWcicRKNFgeqYmsdXKnI7QmI+M/tuMOxn9qGV35RMFaB9ZOYGbQ90X3TM3hB9lX+ZA==}
     dev: true
 
   /@iconify/types/1.0.12:
@@ -407,15 +407,44 @@ packages:
       - supports-color
     dev: true
 
-  /@motionone/dom/10.5.2:
-    resolution: {integrity: sha512-QUSdODngqX/1BJWMvTFDCbIl5mDmg3WyEKDCEe050ua4AKL3JPvSg00jyvfdqf/9bI0EPJW6y1GFKk+vqh6wnA==}
+  /@motionone/animation/10.6.0:
+    resolution: {integrity: sha512-oLGvGoMKdxJrE/oK6jF6ktOMDdn7QC8ZkJ2GFJhYCZh0gx3+fGj/op6ac75JxkBXWVjJ5N4CMo+AkrB9xpK5Jw==}
     dependencies:
+      '@motionone/easing': 10.6.0
+      '@motionone/types': 10.6.0
+      '@motionone/utils': 10.6.0
+      tslib: 2.3.1
+    dev: true
+
+  /@motionone/dom/10.6.0:
+    resolution: {integrity: sha512-d7sQopWDo2CHLh0lgBYCkOMdthjHG4MLIVp7VoTeGnozL2sUOxT3sz7zN6xWiD43lPFiqiUuhtlo2UOLZU8fqg==}
+    dependencies:
+      '@motionone/animation': 10.6.0
+      '@motionone/easing': 10.6.0
+      '@motionone/generators': 10.6.0
+      '@motionone/types': 10.6.0
+      '@motionone/utils': 10.6.0
       hey-listen: 1.0.8
       tslib: 2.3.1
     dev: true
 
-  /@motionone/react/10.5.2:
-    resolution: {integrity: sha512-WUfgJgC/ELYmwaZSySypcdx3Y3Te9RaNF6VRx5tduRuJoU6TroMKYXylG380tqWPUVac5LkvcrVNFUECVsHuXQ==}
+  /@motionone/easing/10.6.0:
+    resolution: {integrity: sha512-/7pXokVSomdLK3DFUt2zTIgsTorIuAr0oZct1bhGAARUWf0vDH3hN3CX9Y21oR0Xa+MScO9zroNBJkLILjt2xw==}
+    dependencies:
+      '@motionone/utils': 10.6.0
+      tslib: 2.3.1
+    dev: true
+
+  /@motionone/generators/10.6.0:
+    resolution: {integrity: sha512-/3FODhE1Dz83wiWm+VTempOqqPiaqPi3h5i2E1TOL20HtURgMVBwTI6lbP3cq+6OAgV57ZyumtUh4CUoqMHH4Q==}
+    dependencies:
+      '@motionone/types': 10.6.0
+      '@motionone/utils': 10.6.0
+      tslib: 2.3.1
+    dev: true
+
+  /@motionone/react/10.6.0:
+    resolution: {integrity: sha512-2PJOLVJad73uDyFIWYpos0aMrCVOIrxtO9BbLotP0lKBQQYt1wgfvHlbWae8DpaUvb+EZb0MD1g6dIu3iicyNQ==}
     peerDependencies:
       react: ^17.0.2
       react-dom: ^17.0.2
@@ -425,22 +454,34 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@motionone/dom': 10.5.2
+      '@motionone/dom': 10.6.0
       hey-listen: 1.0.8
       tslib: 2.3.1
     dev: true
 
-  /@motionone/svelte/10.5.2:
-    resolution: {integrity: sha512-7PX6qmBMV+DXksaZxeEjo9ebb+7qAwmZpNL4w3sAYhN8RXP5YD8GkndqXCXIa2UhwkKWOrYRtCAp1g1o6o8mPQ==}
+  /@motionone/svelte/10.6.0:
+    resolution: {integrity: sha512-3bLAtvjbvkjsHRyYoGnRD7PC9mP81oJDKRleBOXGjqO4P+N6BxIbrCUIdRyo63xdvygRdduQhwfxfonixW5ybA==}
     dependencies:
-      '@motionone/dom': 10.5.2
+      '@motionone/dom': 10.6.0
       tslib: 2.3.1
     dev: true
 
-  /@motionone/vue/10.5.2:
-    resolution: {integrity: sha512-aDtglDZlFG0YEU6ZEBm66CG6xstR98H67oJw7DhQ6iW5kZ7P+2uANKXYSng/+0PCU/d7UteojCatpd9ZiLw+AQ==}
+  /@motionone/types/10.6.0:
+    resolution: {integrity: sha512-CQIrJ9WR+HBKPp7+Q+lTFX1XnN/LBu/Pugl1Lr0waDr9QG9/OkfJCsWwv9dE95NZO0cx/pXcp1oRHGFlrV0E/w==}
+    dev: true
+
+  /@motionone/utils/10.6.0:
+    resolution: {integrity: sha512-74ogWMazeCRw0mbHMjhgYbqbpbhhRmi4ad+a7yopAdyWnz1r5dXFhTATKFNJo7O+69BuH+fMeI96p+6yQQLMOg==}
     dependencies:
-      '@motionone/dom': 10.5.2
+      '@motionone/types': 10.6.0
+      hey-listen: 1.0.8
+      tslib: 2.3.1
+    dev: true
+
+  /@motionone/vue/10.6.0:
+    resolution: {integrity: sha512-82FZ38/Djt0ofLQ4bkkX1LXD/3PNK4bVvqMofFKTZ9iYHrU6HM+Ng2Zs3s1KHdJit516+KgbCgjeqRrWCjFsuA==}
+    dependencies:
+      '@motionone/dom': 10.6.0
       tslib: 2.3.1
     dev: true
 
@@ -4033,16 +4074,6 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /markdown-it-shiki/0.3.0:
-    resolution: {integrity: sha512-oV7vKW3Ao/M1VOe1yI/zBaBWEA9uLZfMoUHuF5MX1J9T/eh9casf/dr6jj1FBsz16mcRmiSw/NKMyXkRQ3iGPQ==}
-    dependencies:
-      debug: 4.3.3
-      shiki: 0.9.15
-      synckit: 0.6.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /markdown-it/12.3.2:
     resolution: {integrity: sha512-TchMembfxfNVpHkbtriWltGWc+m3xszaRD0CZup7GFFhzIgQqxIfn3eGj1yZpfuflzPvfkt611B2Q/Bsk1YnGg==}
     hasBin: true
@@ -4200,13 +4231,14 @@ packages:
     resolution: {integrity: sha512-zMq5n3cOf4fOzA4WoeulxagbAgMChdev3MgP6K51k7M0u2whTXxupfIY4VVzws4vxkiWhwH1rVQcsw7zDGfRhA==}
     dev: true
 
-  /motion/10.5.2:
-    resolution: {integrity: sha512-85Igaf0945g3mrXTCBd1KMJliqZySAUBQnGBrXkZOOQn7EANGLBCwrU7+bXUarCp735UKcZrMoIC0JHop5a61A==}
+  /motion/10.6.0:
+    resolution: {integrity: sha512-X1TS/o3nnu3jvJcIMYrneoVSouU9DFcufcvuy3o4Lw1WAkavSfYmQHA+43V4kANQeA435MAiuZsx619AceTjjA==}
     dependencies:
-      '@motionone/dom': 10.5.2
-      '@motionone/react': 10.5.2
-      '@motionone/svelte': 10.5.2
-      '@motionone/vue': 10.5.2
+      '@motionone/animation': 10.6.0
+      '@motionone/dom': 10.6.0
+      '@motionone/react': 10.6.0
+      '@motionone/svelte': 10.6.0
+      '@motionone/vue': 10.6.0
     transitivePeerDependencies:
       - react
       - react-dom
@@ -5543,8 +5575,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /shiki/0.9.15:
-    resolution: {integrity: sha512-/Y0z9IzhJ8nD9nbceORCqu6NgT9X6I8Fk8c3SICHI5NbZRLdZYFaB233gwct9sU0vvSypyaL/qaKvzyQGJBZSw==}
+  /shiki/0.10.0:
+    resolution: {integrity: sha512-iczxaIYeBFHTFrQPb9DVy2SKgYxC4Wo7Iucm7C17cCh2Ge/refnvHscUOxM85u57MfLoNOtjoEFUWt9gBexblA==}
     dependencies:
       jsonc-parser: 3.0.0
       vscode-oniguruma: 1.6.1
@@ -5816,13 +5848,6 @@ packages:
       csso: 4.2.0
       picocolors: 1.0.0
       stable: 0.1.8
-    dev: true
-
-  /synckit/0.6.0:
-    resolution: {integrity: sha512-AYuCJsMNa/3m1UKxfM9edZEjsdz0Hj7namBHs1RAMcMxEJIBNrq3pUI5EmwtGNWPxOvozuVQtixMnzcMSWJ0xg==}
-    engines: {node: '>=12.3'}
-    dependencies:
-      tslib: 2.3.1
     dev: true
 
   /table/6.8.0:
