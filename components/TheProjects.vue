@@ -4,7 +4,7 @@ import { animate, spring } from "motion";
 import { getDefaultExports } from "~/utils";
 
 const projects = await getDefaultExports<Project>(
-  import.meta.glob("/content/projects/**/*.md")
+  import.meta.glob!("/content/projects/**/*.md")
 );
 projects.sort((a, b) => a.order - b.order);
 
@@ -94,7 +94,7 @@ onBeforeUnmount(() => observer.disconnect());
             {{ title }}
           </h1>
 
-          <component :is="body" />
+          <AppProse :content="body" />
         </div>
       </div>
     </div>

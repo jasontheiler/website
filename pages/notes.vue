@@ -2,7 +2,7 @@
 import { getDefaultExports } from "~/utils";
 
 const notes = await getDefaultExports<Note>(
-  import.meta.glob("/content/notes/**/*.md")
+  import.meta.glob!("/content/notes/**/*.md")
 );
 notes.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 </script>

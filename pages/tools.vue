@@ -2,7 +2,7 @@
 import { getDefaultExports } from "~/utils";
 
 const tools = await getDefaultExports<Tool>(
-  import.meta.glob("/content/tools/**/*.md")
+  import.meta.glob!("/content/tools/**/*.md")
 );
 
 const categories = tools.reduce((categories, tool) => {
@@ -14,7 +14,7 @@ const categories = tools.reduce((categories, tool) => {
   else categories.push({ name: tool.category, tools: [tool] });
 
   return categories;
-}, []);
+}, [] as { name: string; tools: Tool[] }[]);
 categories.sort((a, b) => a.name.localeCompare(b.name));
 </script>
 

@@ -17,7 +17,9 @@ const unplugin = createUnplugin(() => ({
   },
 
   async transform(code, id) {
-    const highlighter = await getHighlighter({});
+    const highlighter = await getHighlighter({
+      theme: "github-dark",
+    });
 
     const markdownIt = new MarkdownIt({
       html: true,
@@ -53,8 +55,8 @@ const unplugin = createUnplugin(() => ({
     });
 
     const { data, content } = grayMatter(code);
-    const html = markdownIt.render(content);
-    const dom = parseDocument(html, {
+    const template = markdownIt.render(content);
+    const dom = parseDocument(template, {
       lowerCaseTags: false,
       lowerCaseAttributeNames: false,
     });
@@ -73,9 +75,9 @@ const unplugin = createUnplugin(() => ({
       aElement.attribs["to"] = href;
     }
 
-    const transformedHtml = serializeDom(dom);
+    const transformedTemplate = serializeDom(dom);
     const results = compileTemplate({
-      source: transformedHtml,
+      source: transformedTemplate,
       filename: id,
       id,
     });
