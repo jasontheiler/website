@@ -25,7 +25,7 @@ const unplugin = createUnplugin(() => ({
       html: true,
       linkify: true,
       highlight(code, lang, attrs) {
-        const fileName = attrs.match(/(?<=\[).*(?=\])/)?.shift();
+        const filename = attrs.match(/(?<=\[).*(?=\])/)?.shift();
         const highlightedLines = attrs
           .match(/(?<={)(\d+(|-\d+),)*\d+(|-\d+)(?=})/)
           ?.shift()
