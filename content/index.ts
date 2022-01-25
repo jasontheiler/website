@@ -9,7 +9,6 @@ import { compileTemplate } from "@vue/compiler-sfc";
 
 const unplugin = createUnplugin(() => ({
   name: "content",
-
   enforce: "pre",
 
   transformInclude(id) {
@@ -24,6 +23,7 @@ const unplugin = createUnplugin(() => ({
     const markdownIt = new MarkdownIt({
       html: true,
       linkify: true,
+
       highlight(code, lang, attrs) {
         const filename = attrs.match(/(?<=\[).*(?=\])/)?.shift();
         const highlightedLines = attrs
@@ -44,13 +44,18 @@ const unplugin = createUnplugin(() => ({
             ];
           }, [] as number[]);
 
-        return highlighter.codeToHtml(code, {
-          lang,
-          lineOptions: highlightedLines?.map((line) => ({
-            line,
-            classes: ["highlight"],
-          })),
-        });
+        return highlighter
+          .codeToHtml(code, {
+            lang,
+            lineOptions: highlightedLines?.map((line) => ({
+              line,
+              classes: ["highlight"],
+            })),
+          })
+          .replace(
+            /^<pre(.|[^.])*?>/,
+            `<pre${filename ? ` data-filename="${filename}"` : ""}>`
+          );
       },
     });
 
