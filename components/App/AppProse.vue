@@ -23,6 +23,10 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
   @apply p-4;
 }
 
+:deep(pre[data-highlighted] .line:not(.highlight)) {
+  @apply opacity-50;
+}
+
 :deep(pre:not([data-filename="shell"])) {
   @apply relative pt-12 rounded-3xl bg-gray-900 before:(content-[""] absolute left-0 top-0 w-24 h-8);
 }

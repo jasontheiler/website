@@ -54,7 +54,9 @@ const unplugin = createUnplugin(() => ({
           })
           .replace(
             /^<pre(.|[^.])*?>/,
-            `<pre${filename ? ` data-filename="${filename}"` : ""}>`
+            `<pre${filename ? ` data-filename="${filename}"` : ""}${
+              highlightedLines ? "data-highlighted" : ""
+            }>`
           );
       },
     });
