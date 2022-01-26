@@ -20,11 +20,11 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
 }
 
 :deep(pre) {
-  @apply p-4 bg-dark-800;
+  @apply p-4;
 }
 
 :deep(pre:not([data-filename="shell"])) {
-  @apply relative pt-12 rounded-3xl before:(content-[""] absolute left-0 top-0 w-24 h-8);
+  @apply relative pt-12 rounded-3xl bg-gray-900 before:(content-[""] absolute left-0 top-0 w-24 h-8);
 }
 
 :deep(pre:not([data-filename="shell"])::before) {
@@ -43,7 +43,7 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
 }
 
 :deep(pre[data-filename="shell"]) {
-  @apply rounded-lg;
+  @apply rounded-lg bg-gray-800;
 }
 
 :deep(pre[data-filename="shell"] .line) {

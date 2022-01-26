@@ -12,6 +12,6 @@
 }
 
 body {
-  @apply bg-dark-900 text-gray-300 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-rounded-full scrollbar-thumb-dark-400 hover:(scrollbar-thumb-dark-200);
+  @apply bg-gray-1000 text-gray-300 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-rounded-full scrollbar-thumb-gray-700 hover:(scrollbar-thumb-gray-600);
 }
 </style>
