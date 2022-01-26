@@ -63,9 +63,16 @@ Inline `code` has `back-ticks` around it.
 
 ```shell [shell]
 npm i -g pnpm
+
+changed 1 package, and audited 2 packages in 1s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
 ```
 
-```vue {5-9} [pages/posts/[slug].vue]
+```vue {5-9,13-14} [~/pages/posts/[slug].vue]
 <script>
 export default {
   async asyncData({ $content, params }) {
