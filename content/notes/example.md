@@ -61,6 +61,10 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 Inline `code` has `back-ticks` around it.
 
+```shell [shell]
+npm i -g pnpm
+```
+
 ```vue {5-9} [pages/posts/[slug].vue]
 <script>
 export default {

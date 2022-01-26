@@ -20,6 +20,33 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
 }
 
 :deep(pre) {
-  @apply -mx-4 p-4;
+  @apply p-4 bg-dark-800;
+}
+
+:deep(pre:not([data-filename="shell"])) {
+  @apply relative pt-12 rounded-3xl before:(content-[""] absolute left-0 top-0 w-24 h-8);
+}
+
+:deep(pre:not([data-filename="shell"])::before) {
+  mask: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 2'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3Ccircle cx='3' cy='1' r='1'/%3E%3Ccircle cx='5' cy='1' r='1'/%3E%3C/svg%3E")
+    no-repeat;
+  mask-size: 100% 100%;
+  background-image: linear-gradient(
+    90deg,
+    #ff554e 0%,
+    #ff554e 33.3%,
+    #ffbf2f 33.3%,
+    #ffbf2f 66.6%,
+    #28ca42 66.6%,
+    #28ca42 100%
+  );
+}
+
+:deep(pre[data-filename="shell"]) {
+  @apply rounded-lg;
+}
+
+:deep(pre[data-filename="shell"] .line) {
+  @apply first:before:(content-["$"]);
 }
 </style>
