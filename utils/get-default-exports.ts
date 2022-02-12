@@ -1,13 +1,11 @@
-type GlobImports = Record<
-  string,
-  Record<string, any> | (() => Promise<Record<string, any>>)
->;
-
 export const getDefaultExports = async <T>(
-  globImports: GlobImports
+  globImport: Record<
+    string,
+    Record<string, any> | (() => Promise<Record<string, any>>)
+  >
 ): Promise<T[]> => {
   const modules = await Promise.all(
-    Object.values(globImports).map(async (module) => {
+    Object.values(globImport).map(async (module) => {
       if (typeof module === "function") return await module();
       else return module;
     })
