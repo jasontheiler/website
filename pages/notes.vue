@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { getDefaultExports } from "~/utils";
 
 const notes = await getDefaultExports<Note>(

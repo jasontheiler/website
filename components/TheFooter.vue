@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 const { buildTime } = useRuntimeConfig();
 const lastUpdated = new Date(buildTime).toLocaleString("en-US", {
   timeZone: "UTC",

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { DefineComponent } from "vue";
 
 defineProps<{ content: DefineComponent<{}, {}, any> }>();

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 // Recommended image aspect ratio: 128:79
 // Recommended image resolution: 1536x948px
 defineProps<{ imageSrc: string; imageAlt: string }>();
