@@ -26,10 +26,6 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
     @apply block overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-rounded-full scrollbar-thumb-gray-700 hover:(scrollbar-thumb-gray-600);
   }
 
-  &[data-highlighted] .line:not(.highlight) {
-    @apply opacity-50;
-  }
-
   &[data-filename="shell"] {
     @apply rounded-lg bg-gray-800;
 
@@ -63,6 +59,10 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
     code {
       @apply p-8 leading-loose;
     }
+  }
+
+  &[data-highlighted] .line:not(.highlight) {
+    @apply opacity-50;
   }
 }
 </style>

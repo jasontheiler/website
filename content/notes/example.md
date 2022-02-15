@@ -72,7 +72,7 @@ changed 1 package, and audited 2 packages in 1s
 found 0 vulnerabilities
 ```
 
-```vue {5-9,13-14} [~/pages/posts/[slug].vue]
+```vue [pages/posts/[slug].vue] {5-9,13-14}
 <script>
 export default {
   async asyncData({ $content, params }) {
