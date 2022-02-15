@@ -23,7 +23,7 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
   @apply overflow-hidden;
 
   code {
-    @apply block overflow-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-rounded-full scrollbar-thumb-gray-700 hover:(scrollbar-thumb-gray-600);
+    @apply block;
   }
 
   &[data-filename="shell"] {
