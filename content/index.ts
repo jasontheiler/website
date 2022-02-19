@@ -6,6 +6,11 @@ import { parseDocument } from "htmlparser2";
 import { getElementsByTagName } from "domutils";
 import serializeDom from "dom-serializer";
 import { compileTemplate } from "@vue/compiler-sfc";
+import {
+  addVitePlugin,
+  addWebpackPlugin,
+  defineNuxtModule,
+} from "@nuxt/kit-edge";
 
 const unplugin = createUnplugin(() => ({
   name: "content",
@@ -114,4 +119,13 @@ const unplugin = createUnplugin(() => ({
   },
 }));
 
-export default unplugin.vite;
+export default defineNuxtModule({
+  meta: {
+    name: "content",
+  },
+
+  setup() {
+    addWebpackPlugin(unplugin.webpack());
+    addVitePlugin(unplugin.vite());
+  },
+});

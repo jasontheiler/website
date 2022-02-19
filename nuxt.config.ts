@@ -1,13 +1,7 @@
 import { defineNuxtConfig } from "nuxt3";
 
-import Content from "./content";
-
 // See: https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-  vite: {
-    plugins: [Content()],
-  },
-
   buildModules: [
     // See: https://github.com/windicss/nuxt-windicss
     "nuxt-windicss",
@@ -15,6 +9,7 @@ export default defineNuxtConfig({
     "@unocss/nuxt",
     // See: https://vueuse.org/
     "@vueuse/nuxt",
+    "~/content",
   ],
 
   css: ["@fontsource/inter/latin.css"],
