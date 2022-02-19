@@ -13,17 +13,17 @@ const lastUpdated = new Date(buildTime).toLocaleString("en-US", {
     class="w-full max-w-screen-xl mx-auto my-16 px-4 flex flex-col items-center leading-loose text-center sm:(px-6)"
   >
     <p class="flex items-center">
-      Built with
+      Built with&nbsp;
       <AppLink
         to="https://nuxtjs.org/"
         title="NuxtJS"
-        class="i-simple-icons-nuxtdotjs ml-2 hover:(text-[#00DC82])"
+        class="i-simple-icons-nuxtdotjs hover:(text-[#00DC82])"
       />
-      , powered by
+      , powered by&nbsp;
       <AppLink
         to="https://vercel.com/"
         title="Vercel"
-        class="i-simple-icons-vercel ml-2 hover:(text-white)"
+        class="i-simple-icons-vercel hover:(text-white)"
       />
     </p>
 
