@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed left-0 top-0 z-50 w-full h-18 bg-perforated backdrop-filter backdrop-blur-sm"
+    class="fixed left-0 top-0 z-50 w-full h-18 bg-gray-1000-perforated backdrop-filter backdrop-blur-sm"
   >
     <div
       class="w-full max-w-screen-xl h-full mx-auto px-4 flex justify-between items-center xs:(px-6) sm:(px-8) md:(px-10) lg:(px-12)"
@@ -28,16 +28,6 @@
 
 <style>
 body {
-  scroll-padding-top: 4.5rem;
-}
-</style>
-
-<style scoped>
-.bg-perforated {
-  background-image: radial-gradient(
-    transparent 1px,
-    theme("colors.gray.1000") 1px
-  );
-  background-size: 4px 4px;
+  @apply scroll-pt-18;
 }
 </style>

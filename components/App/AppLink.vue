@@ -17,7 +17,7 @@ const isExternal = computed(
         ? { href: to, target: '_blank', rel: 'nofollow noopener noreferrer' }
         : { to }
     "
-    class="text-gray-300 no-underline hover:(text-white)"
+    class="text-gray-300 no-underline hover:( text-white )"
     ><slot
   /></component>
 </template>

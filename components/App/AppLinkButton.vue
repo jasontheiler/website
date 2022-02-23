@@ -21,10 +21,10 @@ withDefaults(
       'px-3 py-1.5 text-sm': size === 'sm',
       'px-4 py-2 text-base': size === 'base',
       'px-5 py-2.5 text-lg': size === 'lg',
-      'bg-gray-300 bg-foil text-black hover:(bg-gray-400) focus-visible:(ring-gray-300)':
+      'bg-gray-300 bg-foil text-black hover:( bg-gray-400 ) focus-visible:( ring-gray-300 )':
         variant === 'primary',
     }"
-    class="flex items-center rounded-lg font-semibold transition-shadow duration-100 focus-visible:(outline-none ring ring-offset-4 ring-offset-true-gray-900) disabled:(opacity-50 pointer-events-none)"
+    class="flex items-center rounded-lg font-semibold transition-shadow duration-100 focus-visible:( outline-none ring ring-offset-4 ring-offset-gray-900 ) disabled:( opacity-50 pointer-events-none )"
   >
     <span
       v-if="$slots.iconLeft"

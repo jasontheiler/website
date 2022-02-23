@@ -55,7 +55,7 @@ onBeforeUnmount(() => observer.disconnect());
     <div class="absolute inset-0 pointer-events-none">
       <div class="sticky top-0 w-full h-screen overflow-hidden">
         <div
-          class="w-full max-w-screen-xl h-full mx-auto px-4 xs:(px-6) sm:(px-8) md:(px-10) lg:(px-12)"
+          class="w-full max-w-screen-xl h-full mx-auto px-4 xs:( px-6 ) sm:( px-8 ) md:( px-10 ) lg:( px-12 )"
         >
           <div
             ref="viewsContainerElement"
@@ -79,7 +79,7 @@ onBeforeUnmount(() => observer.disconnect());
     </div>
 
     <div
-      class="w-full max-w-screen-xl mx-auto px-4 xs:(px-6) sm:(px-8) md:(px-10) lg:(px-12)"
+      class="w-full max-w-screen-xl mx-auto px-4 xs:( px-6 ) sm:( px-8 ) md:( px-10 ) lg:( px-12 )"
     >
       <div
         v-for="({ title, body }, idx) in projects"
