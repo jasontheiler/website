@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@fontsource/inter': ^4.5.4
   '@iconify/json': ^2.1.4
-  '@nuxt/kit-edge': npm:@nuxt/kit-edge@latest
+  '@nuxt/kit': npm:@nuxt/kit-edge@latest
   '@types/markdown-it': ^12.2.3
   '@unocss/nuxt': ^0.26.2
   '@vueuse/nuxt': ^7.6.2
@@ -21,7 +21,7 @@ specifiers:
 devDependencies:
   '@fontsource/inter': 4.5.4
   '@iconify/json': 2.1.4
-  '@nuxt/kit-edge': 3.0.0-27424151.dbab979
+  '@nuxt/kit': /@nuxt/kit-edge/3.0.0-27424151.dbab979
   '@types/markdown-it': 12.2.3
   '@unocss/nuxt': 0.26.2_sass@1.49.8
   '@vueuse/nuxt': 7.6.2

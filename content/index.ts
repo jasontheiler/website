@@ -6,11 +6,7 @@ import { parseDocument } from "htmlparser2";
 import { getElementsByTagName } from "domutils";
 import serializeDom from "dom-serializer";
 import { compileTemplate } from "@vue/compiler-sfc";
-import {
-  addVitePlugin,
-  addWebpackPlugin,
-  defineNuxtModule,
-} from "@nuxt/kit-edge";
+import { addVitePlugin, addWebpackPlugin, defineNuxtModule } from "@nuxt/kit";
 
 const unplugin = createUnplugin(() => ({
   name: "content",
