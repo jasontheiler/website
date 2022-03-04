@@ -10,10 +10,10 @@
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.4",
-    "@iconify/json": "^2.1.8",
+    "@iconify/json": "^2.1.10",
     "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
     "@types/markdown-it": "^12.2.3",
-    "@unocss/nuxt": "^0.27.0",
+    "@unocss/nuxt": "^0.27.2",
     "@vueuse/nuxt": "^7.7.0",
     "gray-matter": "^4.0.3",
     "htmlparser2": "^7.2.0",
@@ -23,7 +23,7 @@
     "prettier": "^2.5.1",
     "sass": "^1.49.9",
     "shiki": "^0.10.1",
-    "unocss": "^0.27.0",
+    "unocss": "^0.27.2",
     "unplugin": "^0.3.3"
   }
 }
