@@ -85,9 +85,12 @@ const unplugin = createUnplugin(() => ({
 
     const transformedTemplate = serializeDom(dom);
     const results = compileTemplate({
-      source: transformedTemplate,
-      filename: id,
       id,
+      filename: id,
+      source: transformedTemplate,
+      compilerOptions: {
+        inline: true,
+      },
     });
 
     return `
@@ -97,18 +100,13 @@ const unplugin = createUnplugin(() => ({
         isNaN(Date.parse(value.slice(1, -1))) ? value : `new Date(${value})`
       )};
 
-    ${results.code
-      // Removes all top-level `export` keywords.
-      .replace(
-        /(?<![\[({<][^\])}>]*)export[^.]*?(?=function)(?![^\[({<]*[\])}>])/g,
-        ""
-      )};
+    ${results.preamble};
 
     export default {
       ...data,
       body: {
         name: "${id.split("/").pop()}",
-        render,
+        render: ${results.code},
       },
     };
     `;
@@ -121,7 +119,7 @@ export default defineNuxtModule({
   },
 
   setup() {
-    addWebpackPlugin(unplugin.webpack());
     addVitePlugin(unplugin.vite());
+    addWebpackPlugin(unplugin.webpack());
   },
 });

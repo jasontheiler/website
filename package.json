@@ -10,11 +10,11 @@
   },
   "devDependencies": {
     "@fontsource/inter": "^4.5.4",
-    "@iconify/json": "^2.1.10",
+    "@iconify/json": "^2.1.11",
     "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
     "@types/markdown-it": "^12.2.3",
     "@unocss/nuxt": "^0.27.2",
-    "@vueuse/nuxt": "^7.7.0",
+    "@vueuse/nuxt": "^7.7.1",
     "gray-matter": "^4.0.3",
     "htmlparser2": "^7.2.0",
     "markdown-it": "^12.3.2",
