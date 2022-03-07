@@ -94,6 +94,8 @@ const unplugin = createUnplugin(() => ({
     });
 
     return `
+    import AppLink from "~/components/App/AppLink.vue";
+
     const data = ${JSON.stringify(data)
       // Turns all valid date strings into `Date` objects.
       .replace(/(["'])(?:(?=(\\?))\2.)*?\1/g, (value) =>
@@ -106,6 +108,9 @@ const unplugin = createUnplugin(() => ({
       ...data,
       body: {
         name: "${id.split("/").pop()}",
+        components: {
+          AppLink,
+        },
         render: ${results.code},
       },
     };
