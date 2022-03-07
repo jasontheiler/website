@@ -21,7 +21,6 @@
     "motion": "^10.6.2",
     "nuxt3": "latest",
     "prettier": "^2.5.1",
-    "sass": "^1.49.9",
     "shiki": "^0.10.1",
     "unocss": "^0.27.2",
     "unplugin": "^0.3.3"

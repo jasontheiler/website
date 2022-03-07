@@ -6,7 +6,7 @@
   <TheFooter />
 </template>
 
-<style lang="scss">
+<style>
 :focus:not(:focus-visible) {
   @apply !outline-none;
 }
@@ -16,23 +16,17 @@ body {
 
   scrollbar-width: thin;
   scrollbar-color: #52525b transparent;
+}
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
+body::-webkit-scrollbar {
+  @apply w-8px h-8px;
+}
 
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
+body::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
 
-  &::-webkit-scrollbar-thumb {
-    border-radius: 9999px;
-    background-color: #3f3f46;
-
-    &:hover {
-      background-color: #52525b;
-    }
-  }
+body::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-700 hover:(bg-gray-600);
 }
 </style>
