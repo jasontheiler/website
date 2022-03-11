@@ -6,6 +6,7 @@ import { parseDocument } from "htmlparser2";
 import { getElementsByTagName } from "domutils";
 import serializeDom from "dom-serializer";
 import { compileTemplate } from "@vue/compiler-sfc";
+import { genImport } from "knitwork";
 import { addVitePlugin, addWebpackPlugin, defineNuxtModule } from "@nuxt/kit";
 
 const unplugin = createUnplugin(() => ({
@@ -94,7 +95,7 @@ const unplugin = createUnplugin(() => ({
     });
 
     return `
-    import AppLink from "~/components/App/AppLink.vue";
+    ${genImport("~/components/App/AppLink.vue", "AppLink")};
 
     const data = ${JSON.stringify(data)
       // Turns all valid date strings into `Date` objects.
