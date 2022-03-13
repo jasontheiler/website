@@ -4,4 +4,4 @@ name: Starship
 link: https://starship.rs/
 ---
 
-Fast, informative but minimal prompt for any shell!
+Fast, informative but minimal prompt for any shell.
