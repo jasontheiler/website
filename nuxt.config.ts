@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     "~/content",
   ],
 
-  css: ["@unocss/reset/normalize.css", "@fontsource/inter/latin.css"],
+  css: ["@unocss/reset/tailwind.css", "@fontsource/inter/latin.css"],
 
   publicRuntimeConfig: {
     buildTime: new Date(),
