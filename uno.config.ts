@@ -1,6 +1,5 @@
 import {
   defineConfig,
-  escapeSelector,
   presetIcons,
   presetUno,
   transformerDirectives,
