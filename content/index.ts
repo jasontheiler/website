@@ -76,12 +76,6 @@ const unplugin = createUnplugin(() => ({
 
     for (const aElement of getElementsByTagName("a", dom)) {
       aElement.tagName = "AppLink";
-
-      const href = aElement.attribs["href"];
-      if (!href) continue;
-
-      delete aElement.attribs["href"];
-      aElement.attribs["to"] = href;
     }
 
     const transformedTemplate = serializeDom(dom);
@@ -95,7 +89,7 @@ const unplugin = createUnplugin(() => ({
     });
 
     return `
-    ${genImport("~/components/App/AppLink.vue", "AppLink")};
+    ${genImport("~/components/App/AppLink.ts", "AppLink")};
 
     const data = ${JSON.stringify(data)
       // Turns all valid date strings into `Date` objects.

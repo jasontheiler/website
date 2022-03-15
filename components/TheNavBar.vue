@@ -6,11 +6,19 @@
       <div />
 
       <nav class="flex gap-6">
-        <AppLink :to="{ name: 'notes' }">Notes</AppLink>
+        <AppLink :to="{ name: 'notes' }" class="hover:(text-white)">
+          Notes
+        </AppLink>
 
-        <AppLink :to="{ name: 'tools' }">Tools</AppLink>
+        <AppLink :to="{ name: 'tools' }" class="hover:(text-white)">
+          Tools
+        </AppLink>
 
-        <AppLink to="https://github.com/jasontheiler" class="group">
+        <AppLink
+          to="https://github.com/jasontheiler"
+          target="_blank"
+          class="group hover:(text-white)"
+        >
           GitHub
           <span
             class="i-ri:external-link-fill text-gray-500 group-hover:(text-gray-400)"

@@ -30,7 +30,9 @@ categories.sort((a, b) => a.name.localeCompare(b.name));
           <h3
             class="mb-2 bg-clip-text bg-gray-300 bg-foil font-bold text-2xl text-transparent"
           >
-            <AppLink :to="link">{{ name }}</AppLink>
+            <AppLink :to="link" target="_blank" class="hover:(text-white)">
+              {{ name }}
+            </AppLink>
           </h3>
 
           <AppProse :content="body" />
