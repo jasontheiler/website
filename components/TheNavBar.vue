@@ -1,10 +1,8 @@
 <template>
   <header
-    class="fixed left-0 top-0 z-50 w-full h-18 bg-gray-1000-perforated backdrop-filter backdrop-blur-sm"
+    class="fixed inset-x-0 top-0 z-50 grid-base bg-gray-1000-perforated backdrop-filter backdrop-blur-sm"
   >
-    <div
-      class="w-full max-w-screen-xl h-full mx-auto px-4 flex justify-between items-center xs:(px-6) sm:(px-8) md:(px-10) lg:(px-12)"
-    >
+    <div class="col-span-content h-18 flex justify-between items-center">
       <div />
 
       <nav class="flex gap-6">
@@ -12,13 +10,10 @@
 
         <AppLink :to="{ name: 'tools' }">Tools</AppLink>
 
-        <AppLink
-          to="https://github.com/jasontheiler"
-          class="group flex items-center gap-1"
-        >
+        <AppLink to="https://github.com/jasontheiler" class="group">
           GitHub
-          <div
-            class="i-ri-external-link-fill text-sm text-gray-500 group-hover:(text-gray-400)"
+          <span
+            class="i-ri:external-link-fill text-gray-500 group-hover:(text-gray-400)"
           />
         </AppLink>
       </nav>
