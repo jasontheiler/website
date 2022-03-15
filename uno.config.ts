@@ -1,5 +1,6 @@
 import {
   defineConfig,
+  escapeSelector,
   presetIcons,
   presetUno,
   transformerDirectives,
@@ -9,13 +10,18 @@ import {
 // See: https://github.com/antfu/unocss#configurations
 export default defineConfig({
   transformers: [transformerDirectives(), transformerVariantGroup()],
-  presets: [presetUno(), presetIcons({ scale: 1.2 })],
+  presets: [
+    presetUno(),
+    presetIcons({
+      scale: 1.2,
+      extraProperties: {
+        display: "inline-block",
+        "vertical-align": "text-bottom",
+      },
+    }),
+  ],
 
   theme: {
-    breakpoints: {
-      xs: "384px",
-    },
-
     fontFamily: {
       sans: [
         "Inter",
@@ -62,9 +68,57 @@ export default defineConfig({
         1000: "#0e0e10",
       },
     },
+
+    gridColumn: {
+      "span-viewport": "viewport-start / viewport-end",
+      "span-page": "page-start / page-end",
+      "span-content": "content-start / content-end",
+    },
   },
 
   rules: [
+    [
+      /^grid-base$/,
+      ([], { theme, constructCSS }) => {
+        // @ts-expect-error
+        const { md, xl } = theme.breakpoints;
+
+        return `
+          ${constructCSS({
+            "--grid-base-viewport": 0,
+            "--grid-base-gap": "1rem",
+            "--grid-base-col": "1fr",
+            display: "grid",
+            "grid-template-columns": `
+              [viewport-start]
+              var(--grid-base-viewport)
+              [page-start]
+              var(--grid-base-gap)
+              [content-start col-start]
+              repeat(11, var(--grid-base-col) [col-end] var(--grid-base-gap) [col-start]) var(--grid-base-col)
+              [content-end col-end]
+              var(--grid-base-gap)
+              [page-end]
+              var(--grid-base-viewport)
+              [viewport-end]
+            `,
+          })}
+
+          @media (min-width: ${md}) {
+            ${constructCSS({
+              "--grid-base-gap": "1.5rem",
+            })}
+          }
+
+          @media (min-width: ${xl}) {
+            ${constructCSS({
+              "--grid-base-viewport": "auto",
+              "--grid-base-col": `calc((${xl} - (13 * var(--grid-base-gap))) / 12)`,
+            })}
+          }
+        `;
+      },
+    ],
     [
       /^bg-(\w+)-(\d+)-perforated$/,
       ([, color, shade], { theme }) => {
@@ -78,11 +132,11 @@ export default defineConfig({
       },
     ],
     [
-      "bg-foil",
-      {
+      /^bg-foil$/,
+      () => ({
         "background-image":
           "linear-gradient(-45deg, transparent 0%, rgba(255, 0, 0, 0.125) 16%, rgba(255, 255, 0, 0.125) 24%, rgba(0, 255, 0, 0.125) 32%, rgba(0, 255, 255, 0.125) 40%, rgba(0, 0, 255, 0.125) 48%, rgba(255, 0, 255, 0.125) 56%, transparent 72%)",
-      },
+      }),
     ],
   ],
 });
