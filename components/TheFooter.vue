@@ -10,29 +10,28 @@ const lastUpdated = new Date(buildTime).toLocaleString("en-US", {
 
 <template>
   <footer
-    class="w-full max-w-screen-xl mx-auto my-16 px-4 flex flex-col items-center leading-loose text-center sm:( px-6 )"
+    class="w-full my-16 grid-base text-center children:(col-span-content)"
   >
-    <p class="flex items-center">
-      Built with&nbsp;
+    <p>
+      Built with
       <AppLink
         to="https://nuxtjs.org/"
         title="NuxtJS"
-        class="i-simple-icons-nuxtdotjs hover:( !text-#00DC82 )"
-      />
-      , powered by&nbsp;
+        class="i-simple-icons:nuxtdotjs hover:(text-#00DC82)"
+      />, powered by
       <AppLink
         to="https://vercel.com/"
         title="Vercel"
-        class="i-simple-icons-vercel hover:( !text-white )"
+        class="i-simple-icons:vercel hover:(text-white)"
       />
     </p>
 
-    <p class="mb-4">
+    <p class="mb-4 text-sm">
       <AppLink
         to="https://github.com/jasontheiler/website"
-        class="flex items-center gap-2 text-sm text-gray-500 hover:( !text-gray-400 )"
+        class="text-gray-500 hover:(text-gray-400)"
       >
-        <span class="i-ri-code-s-slash-fill" /> Source code
+        <span class="i-ri:code-s-slash-fill" /> Source code
       </AppLink>
     </p>
 
