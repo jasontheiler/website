@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   css: ["@unocss/reset/tailwind.css", "@fontsource/inter/latin.css"],
 
   publicRuntimeConfig: {
-    buildTime: new Date(),
+    buildTime: new Date().toISOString(),
   },
 
   meta: {
