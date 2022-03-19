@@ -5,7 +5,7 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
 </script>
 
 <template>
-  <div>
+  <div class="grid-base">
     <component :is="content" />
   </div>
 </template>

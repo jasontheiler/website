@@ -2,7 +2,7 @@
   <header
     class="fixed inset-x-0 top-0 z-50 grid-base bg-gray-1000-perforated backdrop-filter backdrop-blur-sm"
   >
-    <div class="col-span-content h-18 flex justify-between items-center">
+    <div class="h-18 flex justify-between items-center">
       <div />
 
       <nav class="flex gap-6">

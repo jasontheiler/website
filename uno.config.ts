@@ -5,9 +5,12 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from "unocss";
+import type { Rule, UserShortcuts } from "@unocss/core";
+import type { Theme } from "@unocss/preset-uno";
+import { colorToString, handler, parseColor } from "@unocss/preset-mini/utils";
 
 // See: https://github.com/antfu/unocss#configurations
-export default defineConfig({
+export default defineConfig<Theme>({
   transformers: [transformerDirectives(), transformerVariantGroup()],
   presets: [
     presetUno(),
@@ -38,7 +41,7 @@ export default defineConfig({
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
-      ],
+      ].join(","),
       mono: [
         "MonoLisa",
         "ui-monospace",
@@ -49,7 +52,7 @@ export default defineConfig({
         '"Liberation Mono"',
         '"Courier New"',
         "monospace",
-      ],
+      ].join(","),
     },
 
     colors: {
@@ -69,63 +72,47 @@ export default defineConfig({
     },
 
     gridColumn: {
-      "span-viewport": "viewport-start / viewport-end",
-      "span-page": "page-start / page-end",
-      "span-content": "content-start / content-end",
+      "span-outer": "outer-start / outer-end",
+      "span-mid": "mid-start / mid-end",
+      "span-inner": "inner-start / inner-end",
     },
   },
 
   rules: [
     [
-      /^grid-base$/,
-      ([], { theme, constructCSS }) => {
-        // @ts-expect-error
-        const { md, xl } = theme.breakpoints;
+      /^grid-cols-base-(.+)$/,
+      ([, s], { theme }) => {
+        const space = theme.width?.[s] ?? handler.bracket.fraction.rem(s);
 
-        return `
-          ${constructCSS({
-            "--grid-base-viewport": 0,
-            "--grid-base-gap": "1rem",
-            "--grid-base-col": "1fr",
-            display: "grid",
+        if (space)
+          return {
             "grid-template-columns": `
-              [viewport-start]
-              var(--grid-base-viewport)
-              [page-start]
-              var(--grid-base-gap)
-              [content-start col-start]
-              repeat(11, var(--grid-base-col) [col-end] var(--grid-base-gap) [col-start]) var(--grid-base-col)
-              [content-end col-end]
-              var(--grid-base-gap)
-              [page-end]
-              var(--grid-base-viewport)
-              [viewport-end]
-            `,
-          })}
-
-          @media (min-width: ${md}) {
-            ${constructCSS({
-              "--grid-base-gap": "1.5rem",
-            })}
-          }
-
-          @media (min-width: ${xl}) {
-            ${constructCSS({
-              "--grid-base-viewport": "auto",
-              "--grid-base-col": `calc((${xl} - (13 * var(--grid-base-gap))) / 12)`,
-            })}
-          }
-        `;
+            [outer-start]
+            auto
+            [mid-start]
+            ${space}
+            [inner-start]
+            minmax(0, calc(${theme.breakpoints?.["xl"]} - (2 * ${space})))
+            [inner-end]
+            ${space}
+            [mid-end]
+            auto
+            [outer-end]
+          `,
+          };
       },
     ],
     [
-      /^bg-(\w+)-(\d+)-perforated$/,
-      ([, color, shade], { theme }) => {
-        // @ts-expect-error
-        if (theme.colors[color][shade])
+      /^bg-(.+)-perforated$/,
+      ([, c], { theme }) => {
+        const { cssColor, alpha } = parseColor(c, theme)!;
+
+        if (cssColor)
           return {
-            // @ts-expect-error
-            "background-image": `radial-gradient(transparent 1px, ${theme.colors[color][shade]} 1px)`,
+            "background-image": `radial-gradient(transparent 1px, ${colorToString(
+              cssColor,
+              alpha
+            )} 1px)`,
             "background-size": "4px 4px",
           };
       },
@@ -137,5 +124,12 @@ export default defineConfig({
           "linear-gradient(-45deg, transparent 0%, rgba(255, 0, 0, 0.125) 16%, rgba(255, 255, 0, 0.125) 24%, rgba(0, 255, 0, 0.125) 32%, rgba(0, 255, 255, 0.125) 40%, rgba(0, 0, 255, 0.125) 48%, rgba(255, 0, 255, 0.125) 56%, transparent 72%)",
       }),
     ],
-  ],
+  ] as Rule<Theme>[],
+
+  shortcuts: [
+    [
+      "grid-base",
+      "grid grid-cols-base-4 sm:grid-cols-base-6 children:(col-span-inner)",
+    ],
+  ] as UserShortcuts<Theme>,
 });

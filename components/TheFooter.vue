@@ -9,9 +9,7 @@ const lastUpdated = new Date(buildTime).toLocaleString("en-US", {
 </script>
 
 <template>
-  <footer
-    class="w-full my-16 grid-base text-center children:(col-span-content)"
-  >
+  <footer class="w-full my-16 grid-base text-center">
     <p>
       Built with
       <AppLink
