@@ -1,3 +1,4 @@
+import type { Rule, UserShortcuts } from "unocss";
 import {
   defineConfig,
   presetIcons,
@@ -5,7 +6,6 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from "unocss";
-import type { Rule, UserShortcuts } from "@unocss/core";
 import type { Theme } from "@unocss/preset-uno";
 import { colorToString, handler, parseColor } from "@unocss/preset-mini/utils";
 
@@ -25,34 +25,8 @@ export default defineConfig<Theme>({
 
   theme: {
     fontFamily: {
-      sans: [
-        "Inter",
-        "ui-sans-serif",
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        '"Segoe UI"',
-        "Roboto",
-        '"Helvetica Neue"',
-        "Arial",
-        '"Noto Sans"',
-        "sans-serif",
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ].join(","),
-      mono: [
-        "MonoLisa",
-        "ui-monospace",
-        "SFMono-Regular",
-        "Menlo",
-        "Monaco",
-        "Consolas",
-        '"Liberation Mono"',
-        '"Courier New"',
-        "monospace",
-      ].join(","),
+      sans: ["Inter", presetUno().theme?.fontFamily?.sans].join(","),
+      mono: ["MonoLisa", presetUno().theme?.fontFamily?.mono].join(","),
     },
 
     colors: {
@@ -92,7 +66,7 @@ export default defineConfig<Theme>({
             [mid-start]
             ${space}
             [inner-start]
-            minmax(0, calc(${theme.breakpoints?.["xl"]} - (2 * ${space})))
+            minmax(0, calc(${theme.breakpoints?.xl} - (2 * ${space})))
             [inner-end]
             ${space}
             [mid-end]
