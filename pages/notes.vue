@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { getDefaultExports } from "~/utils";
+import { formatDate, getDefaultExports } from "~/utils";
 
 const notes = await getDefaultExports<Note>(
   import.meta.glob!("/content/notes/**/*.md")
@@ -19,14 +19,7 @@ notes.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
       </h2>
 
       <p class="italic text-gray-500">
-        {{
-          createdAt.toLocaleString("en-US", {
-            timeZone: "UTC",
-            dateStyle: "medium",
-            timeStyle: "long",
-            hour12: false,
-          })
-        }}
+        {{ formatDate(createdAt) }}
       </p>
 
       <AppProse :content="body" />

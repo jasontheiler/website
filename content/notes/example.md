@@ -1,7 +1,7 @@
 ---
 title: Example
 description: This is just a simple example!
-createdAt: 2021-11-27T03:29:45.497Z
+createdAt: 2021-11-27
 ---
 
 ## Headers

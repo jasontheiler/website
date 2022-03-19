@@ -1,11 +1,7 @@
 <script lang="ts" setup>
+import { formatDate } from "~/utils";
+
 const { buildTime } = useRuntimeConfig();
-const lastUpdated = new Date(buildTime).toLocaleString("en-US", {
-  timeZone: "UTC",
-  dateStyle: "medium",
-  timeStyle: "long",
-  hour12: false,
-});
 </script>
 
 <template>
@@ -49,6 +45,8 @@ const lastUpdated = new Date(buildTime).toLocaleString("en-US", {
       </AppLink>
     </p>
 
-    <p class="italic text-sm text-gray-500">Last updated: {{ lastUpdated }}</p>
+    <p class="italic text-sm text-gray-500">
+      Last updated: {{ formatDate(buildTime) }}
+    </p>
   </footer>
 </template>
