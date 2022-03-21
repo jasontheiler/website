@@ -94,7 +94,9 @@ onBeforeUnmount(() => observer.disconnect());
             {{ title }}
           </h1>
 
-          <AppProse :content="body" />
+          <AppProse flush>
+            <component :is="body" />
+          </AppProse>
         </div>
       </div>
     </div>

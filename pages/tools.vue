@@ -35,7 +35,9 @@ categories.sort((a, b) => a.name.localeCompare(b.name));
             </AppLink>
           </h3>
 
-          <AppProse :content="body" />
+          <AppProse flush>
+            <component :is="body" />
+          </AppProse>
         </div>
       </div>
     </div>

@@ -8,10 +8,8 @@ notes.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
 </script>
 
 <template>
-  <main
-    class="w-full max-w-screen-xl mx-auto mt-32 px-4 xs:(px-6) sm:(px-8) md:(px-10) lg:(px-12)"
-  >
-    <div v-for="{ title, createdAt, body } in notes">
+  <main class="mt-32">
+    <article v-for="{ title, createdAt, body } in notes">
       <h2
         class="mb-2 bg-clip-text bg-gray-300 bg-foil font-bold text-2xl text-transparent"
       >
@@ -22,7 +20,9 @@ notes.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
         {{ formatDate(createdAt) }}
       </p>
 
-      <AppProse :content="body" />
-    </div>
+      <AppProse>
+        <component :is="body" />
+      </AppProse>
+    </article>
   </main>
 </template>

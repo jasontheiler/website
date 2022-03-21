@@ -1,38 +1,40 @@
 <script lang="ts" setup>
-import { DefineComponent } from "vue";
-
-defineProps<{ content: DefineComponent<{}, {}, any> }>();
+defineProps<{ flush?: boolean }>();
 </script>
 
 <template>
-  <div class="grid-base">
-    <component :is="content" />
+  <div :class="{ flush }" class="grid-base">
+    <slot />
   </div>
 </template>
 
 <style scoped>
+:deep(> *) {
+  @apply \\
+    not-last:(mb-10)
+    sm:(text-lg);
+}
+
 :deep(a) {
   @apply underline underline-current;
 }
 
 :deep(code) {
-  @apply font-mono;
+  @apply font-mono text-0.875em;
 }
 
 :deep(pre) {
-  @apply overflow-hidden;
+  @apply \\
+    col-span-mid p-4 border-y border-gray-800 bg-gray-900 overflow-hidden
+    md:(border rounded-xl);
 }
 
 :deep(pre) code {
-  @apply block scrollbar-thin scrollbar-track-transparent scrollbar-thumb-rounded-full scrollbar-thumb-gray-700 hover:(scrollbar-thumb-gray-600);
-}
-
-:deep(pre[data-filename="shell"]) {
-  @apply rounded-lg bg-gray-800;
+  @apply block text-sm;
 }
 
 :deep(pre[data-filename="shell"]) code {
-  @apply p-5 leading-normal;
+  @apply leading-normal;
 }
 
 :deep(pre[data-filename="shell"]) .line {
@@ -40,7 +42,10 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
 }
 
 :deep(pre:not([data-filename="shell"])) {
-  @apply relative pt-9 rounded-3xl bg-gray-900 before:(content-[""] absolute left-8 top-0 w-13.5 h-18) after:(content-[attr(data-filename)] absolute left-27 top-0 h-18 flex items-center font-mono);
+  @apply \\
+    relative pt-7
+    before:(content-[""] absolute left-4 top-0 w-13.5 h-18)
+    after:(content-[attr(data-filename)] absolute left-23 top-0 h-18 flex items-center font-mono text-sm);
 }
 
 :deep(pre:not([data-filename="shell"])::before) {
@@ -59,7 +64,7 @@ defineProps<{ content: DefineComponent<{}, {}, any> }>();
 }
 
 :deep(pre:not([data-filename="shell"])) code {
-  @apply p-8 leading-loose;
+  @apply leading-loose;
 }
 
 :deep(pre[data-highlighted]) .line:not(.highlight) {
