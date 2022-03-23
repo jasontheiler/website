@@ -29,22 +29,6 @@ export default defineConfig<Theme>({
       mono: ["MonoLisa", presetUno().theme?.fontFamily?.mono].join(","),
     },
 
-    colors: {
-      gray: {
-        50: "#fafafa",
-        100: "#f4f4f5",
-        200: "#e4e4e7",
-        300: "#d4d4d8",
-        400: "#a1a1aa",
-        500: "#71717a",
-        600: "#52525b",
-        700: "#3f3f46",
-        800: "#27272a",
-        900: "#18181b",
-        1000: "#0e0e10",
-      },
-    },
-
     gridColumn: {
       "span-outer": "outer-start / outer-end",
       "span-mid": "mid-start / mid-end",

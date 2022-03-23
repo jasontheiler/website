@@ -12,7 +12,7 @@
 }
 
 body {
-  @apply bg-gray-1000 font-sans text-gray-300;
+  @apply bg-dark-900 font-sans text-gray-400;
 
   scrollbar-width: thin;
   scrollbar-color: #52525b transparent;
