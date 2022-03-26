@@ -21,7 +21,7 @@ defineProps<{ flush?: boolean }>();
 
 :deep(a) {
   @apply \\
-    underline underline-2 underline-offset-3
+    underline underline-0.125em underline-offset-0.1875em
     hover:(text-white underline-wavy);
 }
 
@@ -53,9 +53,9 @@ defineProps<{ flush?: boolean }>();
 
 :deep(pre:not([data-filename="shell"])) {
   @apply \\
-    relative pt-13
-    before:(content-[""] absolute left-4 top-0 w-13.5 h-15)
-    after:(content-[attr(data-filename)] absolute left-23 top-0 h-15 flex items-center font-mono text-sm);
+    relative pt-11
+    before:(content-[""] absolute left-4 top-0 w-13.5 h-11)
+    after:(content-[attr(data-filename)] absolute left-23 top-0 h-11 flex items-center font-mono text-sm);
 }
 
 :deep(pre:not([data-filename="shell"])::before) {

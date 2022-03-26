@@ -5,7 +5,7 @@ const { buildTime } = useRuntimeConfig();
 </script>
 
 <template>
-  <footer class="w-full my-16 grid-base text-center">
+  <footer class="my-16 grid-base text-center">
     <p>
       Built with
       <AppLink
