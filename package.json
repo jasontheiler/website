@@ -13,7 +13,7 @@
     "@iconify/json": "^2.1.20",
     "@nuxt/kit": "npm:@nuxt/kit-edge@latest",
     "@types/markdown-it": "^12.2.3",
-    "@unocss/nuxt": "^0.30.4",
+    "@unocss/nuxt": "^0.30.6",
     "@vueuse/nuxt": "^8.2.0",
     "gray-matter": "^4.0.3",
     "htmlparser2": "^7.2.0",
@@ -25,7 +25,7 @@
     "shiki": "^0.10.1",
     "three": "^0.138.3",
     "troisjs": "^0.3.4",
-    "unocss": "^0.30.4",
+    "unocss": "^0.30.6",
     "unplugin": "^0.5.2"
   }
 }

@@ -36,17 +36,7 @@ export default defineConfig<Theme>({
     },
   },
 
-  variants: [
-    (matcher) => {
-      const matches = matcher.match(/^dot.+?:/);
-
-      if (matches)
-        return {
-          matcher: matcher.slice(matches[0].length),
-          selector: (s) => `.${matches[0].slice(3, -1)} ${s}`,
-        };
-    },
-  ] as Variant<Theme>[],
+  variants: [] as Variant<Theme>[],
 
   rules: [
     [
