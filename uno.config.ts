@@ -1,4 +1,4 @@
-import type { Rule, UserShortcuts } from "unocss";
+import type { Rule, UserShortcuts, Variant } from "unocss";
 import {
   defineConfig,
   presetIcons,
@@ -7,7 +7,7 @@ import {
   transformerVariantGroup,
 } from "unocss";
 import type { Theme } from "@unocss/preset-uno";
-import { colorToString, parseColor } from "@unocss/preset-mini/utils";
+import { colorToString, handler, parseColor } from "@unocss/preset-mini/utils";
 
 // See: https://github.com/antfu/unocss#configurations
 export default defineConfig<Theme>({
@@ -36,24 +36,41 @@ export default defineConfig<Theme>({
     },
   },
 
+  variants: [
+    (matcher) => {
+      const matches = matcher.match(/^dot.+?:/);
+
+      if (matches)
+        return {
+          matcher: matcher.slice(matches[0].length),
+          selector: (s) => `.${matches[0].slice(3, -1)} ${s}`,
+        };
+    },
+  ] as Variant<Theme>[],
+
   rules: [
     [
-      /^grid-cols-base/,
-      ([], { theme }) => ({
-        "grid-template-columns": `
+      /^grid-cols-base-(.+)$/,
+      ([, s], { theme }) => {
+        const space = theme.width?.[s] ?? handler.bracket.fraction.rem(s);
+
+        if (space)
+          return {
+            "grid-template-columns": `
             [outer-start]
             auto
             [mid-start]
-            1rem
+            ${space}
             [inner-start]
-            minmax(0, calc(${theme.breakpoints?.md} - 2rem))
+            minmax(0, calc(${theme.breakpoints?.md} - (2 * ${space})))
             [inner-end]
-            1rem
+            ${space}
             [mid-end]
             auto
             [outer-end]
           `,
-      }),
+          };
+      },
     ],
     [
       /^bg-(.+)-perforated$/,
@@ -80,6 +97,6 @@ export default defineConfig<Theme>({
   ] as Rule<Theme>[],
 
   shortcuts: [
-    ["grid-base", "grid grid-cols-base children:(col-span-inner)"],
+    ["grid-base", "grid grid-cols-base-4 children:(col-span-inner)"],
   ] as UserShortcuts<Theme>,
 });

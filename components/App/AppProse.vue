@@ -3,7 +3,7 @@ defineProps<{ flush?: boolean }>();
 </script>
 
 <template>
-  <div :class="{ flush }" class="grid-base">
+  <div :class="{ 'flush grid-cols-base-0': flush }" class="grid-base">
     <slot />
   </div>
 </template>
@@ -36,6 +36,7 @@ defineProps<{ flush?: boolean }>();
 :deep(pre) {
   @apply \\
     col-span-mid p-4 border-y border-dark-800 shadow shadow-black/33 bg-dark-900 overflow-hidden
+    dotflush:(border rounded-xl)
     md:(border rounded-xl);
 }
 
