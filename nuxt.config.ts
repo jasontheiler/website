@@ -2,10 +2,6 @@ import { defineNuxtConfig } from "nuxt3";
 
 // See: https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-  build: {
-    transpile: ["troisjs"],
-  },
-
   buildModules: [
     // See: https://github.com/antfu/unocss
     "@unocss/nuxt",
