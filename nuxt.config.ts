@@ -1,12 +1,12 @@
-import { defineNuxtConfig } from "nuxt3";
+import { defineNuxtConfig } from "nuxt";
 
 // See: https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-  srcDir: "./src",
-
   typescript: {
     strict: true,
   },
+
+  srcDir: "./src",
 
   buildModules: [
     // See: https://github.com/antfu/unocss

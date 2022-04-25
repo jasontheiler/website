@@ -1,12 +1,14 @@
-import type { Rule, UserShortcuts, Variant } from "unocss";
 import {
+  type Rule,
+  type UserShortcuts,
+  type Variant,
   defineConfig,
   presetIcons,
   presetUno,
   transformerDirectives,
   transformerVariantGroup,
 } from "unocss";
-import type { Theme } from "@unocss/preset-uno";
+import { type Theme } from "@unocss/preset-uno";
 import { colorToString, handler, parseColor } from "@unocss/preset-mini/utils";
 
 // See: https://github.com/antfu/unocss#configurations
