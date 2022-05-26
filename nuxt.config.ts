@@ -1,6 +1,6 @@
 import { defineNuxtConfig } from "nuxt";
 
-// See: https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
+// See: https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   typescript: {
     strict: true,
@@ -9,11 +9,12 @@ export default defineNuxtConfig({
   srcDir: "./src",
 
   buildModules: [
+    // See: https://content.nuxtjs.org/
+    "@nuxt/content",
     // See: https://github.com/antfu/unocss
     "@unocss/nuxt",
     // See: https://vueuse.org/
     "@vueuse/nuxt",
-    "~/content",
   ],
 
   css: ["@unocss/reset/tailwind.css", "@fontsource/inter/latin.css"],

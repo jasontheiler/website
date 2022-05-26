@@ -1,7 +1,6 @@
 ---
 title: Example
-description: This is just a simple example!
-createdAt: 2021-11-27
+createdAt: 2023-11-27
 ---
 
 ## Headers
@@ -61,7 +60,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 Inline `code` has `back-ticks` around it.
 
-```shell [shell]
+```shell
 npm i -g pnpm
 
 changed 1 package, and audited 2 packages in 1s
@@ -72,7 +71,7 @@ changed 1 package, and audited 2 packages in 1s
 found 0 vulnerabilities
 ```
 
-```vue [pages/posts/[slug].vue] {5-9,13-14}
+```vue
 <script>
 export default {
   async asyncData({ $content, params }) {

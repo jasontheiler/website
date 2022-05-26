@@ -1,19 +1,15 @@
-declare type Content = Record<string, any> & {
-  body: import("vue").DefineComponent<{}, {}, any>;
-};
+type ParsedContent = import("@nuxt/content/dist/runtime/types").ParsedContent;
 
-declare type Project = Content & {
-  order: number;
+declare type Project = ParsedContent & {
   title: string;
 };
 
-declare type Note = Content & {
+declare type Note = ParsedContent & {
   title: string;
-  description: string;
-  createdAt: Date;
+  createdAt: string;
 };
 
-declare type Tool = Content & {
+declare type Tool = ParsedContent & {
   category: string;
   name: string;
   link: string;

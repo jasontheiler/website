@@ -1,7 +1,4 @@
 import {
-  type Rule,
-  type UserShortcuts,
-  type Variant,
   defineConfig,
   presetIcons,
   presetUno,
@@ -26,11 +23,6 @@ export default defineConfig<Theme>({
   ],
 
   theme: {
-    fontFamily: {
-      sans: ["Inter", presetUno().theme?.fontFamily?.sans].join(","),
-      mono: ["MonoLisa", presetUno().theme?.fontFamily?.mono].join(","),
-    },
-
     gridColumn: {
       "span-outer": "outer-start / outer-end",
       "span-mid": "mid-start / mid-end",
@@ -38,7 +30,12 @@ export default defineConfig<Theme>({
     },
   },
 
-  variants: [] as Variant<Theme>[],
+  extendTheme: [
+    (theme) => {
+      theme.fontFamily!.sans = ["Inter", theme.fontFamily!.sans].join(",");
+      theme.fontFamily!.mono = ["MonoLisa", theme.fontFamily!.mono].join(",");
+    },
+  ],
 
   rules: [
     [
@@ -86,9 +83,7 @@ export default defineConfig<Theme>({
           "linear-gradient(-45deg, transparent 0%, rgba(255, 0, 0, 0.125) 16%, rgba(255, 255, 0, 0.125) 24%, rgba(0, 255, 0, 0.125) 32%, rgba(0, 255, 255, 0.125) 40%, rgba(0, 0, 255, 0.125) 48%, rgba(255, 0, 255, 0.125) 56%, transparent 72%)",
       }),
     ],
-  ] as Rule<Theme>[],
+  ],
 
-  shortcuts: [
-    ["grid-base", "grid grid-cols-base-4 children:(col-span-inner)"],
-  ] as UserShortcuts<Theme>,
+  shortcuts: [["grid-base", "grid grid-cols-base-4 children:(col-span-inner)"]],
 });

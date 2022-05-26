@@ -1,28 +1,31 @@
 <script lang="ts" setup>
-import { formatDate, getDefaultExports } from "~/utils";
+import { formatDate } from "~/utils";
 
-const notes = await getDefaultExports<Note>(
-  import.meta.glob!("/content/notes/**/*.md")
-);
-notes.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+const { data: notes } = await useAsyncData("notes", async () => {
+  const notes = await queryContent<Note>("notes").find();
+
+  notes.sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+  );
+
+  return notes;
+});
 </script>
 
 <template>
   <main class="mt-32">
-    <article v-for="{ title, createdAt, body } in notes">
+    <article v-for="note in notes">
       <h2
         class="mb-2 bg-clip-text bg-gray-300 bg-foil font-bold text-2xl text-transparent"
       >
-        {{ title }}
+        {{ note.title }}
       </h2>
 
       <p class="italic text-gray-500">
-        {{ formatDate(createdAt) }}
+        {{ formatDate(note.createdAt) }}
       </p>
 
-      <AppProse>
-        <component :is="body" />
-      </AppProse>
+      <ContentRenderer :value="note" />
     </article>
   </main>
 </template>
