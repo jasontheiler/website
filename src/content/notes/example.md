@@ -60,7 +60,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 Inline `code` has `back-ticks` around it.
 
-```shell
+```shell [shell]
 npm i -g pnpm
 
 changed 1 package, and audited 2 packages in 1s
@@ -71,7 +71,7 @@ changed 1 package, and audited 2 packages in 1s
 found 0 vulnerabilities
 ```
 
-```vue
+```vue [pages/posts/[slug].vue] {5-9, 13-14}
 <script>
 export default {
   async asyncData({ $content, params }) {

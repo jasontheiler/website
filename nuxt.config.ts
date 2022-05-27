@@ -28,4 +28,10 @@ export default defineNuxtConfig({
       { rel: "stylesheet", href: "https://www.monolisa.dev/api/fonts/initial" },
     ],
   },
+
+  content: {
+    highlight: {
+      theme: "github-dark",
+    },
+  },
 });
