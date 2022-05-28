@@ -2,6 +2,7 @@
   "name": "website",
   "private": true,
   "license": "GPL-3.0",
+  "packageManager": "pnpm@7.1.6",
   "scripts": {
     "fmt": "prettier --write .",
     "dev": "nuxi dev",
