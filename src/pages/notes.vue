@@ -1,15 +1,9 @@
 <script lang="ts" setup>
 import { formatDate } from "~/utils";
 
-const { data: notes } = await useAsyncData("notes", async () => {
-  const notes = await queryContent<Note>("notes").find();
-
-  notes.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-  );
-
-  return notes;
-});
+const { data: notes } = await useAsyncData("notes", () =>
+  queryContent<Note>("notes").sort({ createdAt: -1 }).find()
+);
 </script>
 
 <template>

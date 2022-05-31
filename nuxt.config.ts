@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 
   srcDir: "./src",
 
-  buildModules: [
+  modules: [
     // See: https://content.nuxtjs.org/
     "@nuxt/content",
     // See: https://github.com/antfu/unocss
