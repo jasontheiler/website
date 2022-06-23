@@ -1,5 +1,5 @@
 ---
-category: Websites
+category: Web apps
 name: Hoppscotch
 link: https://hoppscotch.io/
 ---

@@ -1,5 +1,5 @@
 ---
-category: Websites
+category: Web apps
 name: Lib.rs
 link: https://lib.rs/
 ---
