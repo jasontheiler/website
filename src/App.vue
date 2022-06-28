@@ -16,11 +16,9 @@ nuxtApp.hook("page:finish", () => {
 <template>
   <TheBackground />
 
-  <TheNavBar />
-
-  <NuxtPage />
-
-  <TheFooter />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <style>
