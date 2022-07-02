@@ -1,19 +1,6 @@
-<script lang="ts" setup>
-import NProgress from "nprogress";
-
-import "nprogress/nprogress.css";
-
-const nuxtApp = useNuxtApp();
-
-nuxtApp.hook("page:start", () => {
-  NProgress.start();
-});
-nuxtApp.hook("page:finish", () => {
-  NProgress.done();
-});
-</script>
-
 <template>
+  <TheProgressBar />
+
   <TheBackground />
 
   <NuxtLayout>
