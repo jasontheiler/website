@@ -8,6 +8,10 @@ export default defineNuxtConfig({
 
   srcDir: "./src",
 
+  build: {
+    transpile: ["motion"],
+  },
+
   modules: [
     // See: https://content.nuxtjs.org/
     "@nuxt/content",
