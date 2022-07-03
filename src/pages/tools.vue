@@ -11,8 +11,6 @@ const { data: categories } = await useAsyncData("tools", async () => {
 
   return categories;
 });
-
-await new Promise((resolve) => setTimeout(resolve, 5000));
 </script>
 
 <template>

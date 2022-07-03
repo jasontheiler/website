@@ -11,9 +11,9 @@ const withVariation = (base: number, variation: number) =>
 
 let trickleTimeout: NodeJS.Timeout;
 const trickle = () => {
-  progress.value! += withVariation(4, 2);
-  if (progress.value! >= 90) progress.value = 90;
-  else trickleTimeout = setTimeout(trickle, withVariation(250, 125));
+  progress.value! += (95.1 - progress.value!) / 2.5;
+  if (progress.value! >= 95) progress.value = 95;
+  else trickleTimeout = setTimeout(trickle, withVariation(500, 250));
 };
 
 nuxtApp.hook("page:start", () => {
