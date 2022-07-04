@@ -6,14 +6,11 @@ const nuxtApp = useNuxtApp();
 const progress = ref<number | null>(null);
 const isProgressing = computed(() => progress.value !== null);
 
-const withVariation = (base: number, variation: number) =>
-  base + (Math.random() - 0.5) * variation;
-
 let trickleTimeout: NodeJS.Timeout;
 const trickle = () => {
   progress.value! += (95.1 - progress.value!) / 2.5;
   if (progress.value! >= 95) progress.value = 95;
-  else trickleTimeout = setTimeout(trickle, withVariation(500, 250));
+  else trickleTimeout = setTimeout(trickle, 500 + (Math.random() - 0.5) * 250);
 };
 
 nuxtApp.hook("page:start", () => {
@@ -33,20 +30,18 @@ const onMotioncomplete = () => {
 </script>
 
 <template>
-  <Teleport to="body">
-    <Presence>
+  <Presence>
+    <Motion
+      v-if="isProgressing"
+      :exit="{ opacity: 0 }"
+      class="fixed inset-0 bottom-auto z-9999 overflow-hidden"
+    >
       <Motion
-        v-if="isProgressing"
-        :exit="{ opacity: 0 }"
-        class="fixed inset-0 bottom-auto z-9999 overflow-hidden"
-      >
-        <Motion
-          :initial="{ transform: 'translateX(-100%)' }"
-          :animate="{ transform: `translateX(-${100 - progress!}%)` }"
-          class="w-full h-0.5 bg-emerald"
-          @motioncomplete="onMotioncomplete"
-        />
-      </Motion>
-    </Presence>
-  </Teleport>
+        :initial="{ transform: 'translateX(-100%)' }"
+        :animate="{ transform: `translateX(-${100 - progress!}%)` }"
+        class="w-full h-0.5 bg-emerald"
+        @motioncomplete="onMotioncomplete"
+      />
+    </Motion>
+  </Presence>
 </template>
