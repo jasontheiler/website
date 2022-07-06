@@ -3,6 +3,8 @@
 
   <TheBackground />
 
+  <TheCommandCenter />
+
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
